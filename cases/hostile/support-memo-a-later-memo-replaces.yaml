@@ -1,0 +1,65 @@
+# A hostile proposal: synthetic, written for this repository. Hand it to the checks with
+# `playbooks check <this file>`. The check it names must refuse it, by the rule it names.
+# It is the honest first-cycle proposal with one thing changed, and it is written for the
+# bundle of the first cycle: the founding memos, the custodian B memo, the notice that
+# changes no rule, the correction and its gap report, taken in and not yet cited.
+refused_by: support
+rule: replaced_by_later_memo
+asks_for: The custodian B step rested on the founding memo, which a later memo from the same desk replaces
+  for custodian B.
+changes:
+- change: change
+  playbook: feed-outage
+  version: 1
+  step: portfolio-feed-failed
+  code: SOURCE_UNAVAILABLE
+  when:
+    source_family: PAS
+    feed_status: FAILED
+    custodian: A
+  tell: portfolio-accounting
+  by: same_day 20:00 ET
+  hold_report: true
+  line: Ask for the failed portfolio accounting fetch to be run again.
+  rests_on:
+  - memo-custodian-b-feed-escalation
+  - memo-feed-outage-founding
+- change: add
+  playbook: feed-outage
+  version: 1
+  step: custodian-b-portfolio-feed-failed
+  code: SOURCE_UNAVAILABLE
+  when:
+    source_family: PAS
+    feed_status: FAILED
+    custodian: B
+  tell: custodian-b-service
+  by: within 2 hours
+  hold_report: true
+  line: Ask the custodian's service desk for the failed fetch to be run again.
+  rests_on:
+  - memo-feed-outage-founding
+- change: change
+  playbook: missing-cross-check
+  version: 1
+  step: custody-cross-check-missing
+  code: RECONCILIATION_UNAVAILABLE
+  when:
+    source_family: CUSTODY
+    custodian: any
+    feed_status: any
+  tell: custody-operations
+  by: next_business_day 10:00 ET
+  hold_report: false
+  line: Ask for the missing custody positions file so the cross-check can run.
+  rests_on:
+  - correction-hnfpafekmljplgcg
+  - gap-report-apnhmmfjjomimnjh
+  - memo-missing-cross-check-founding
+disagreements:
+- between:
+  - memo-missing-cross-check-founding
+  - correction-hnfpafekmljplgcg
+  - gap-report-apnhmmfjjomimnjh
+  about: The founding memo holds the advisor's report for a missing cross-check. The correction says that
+    alone is no reason to hold it.

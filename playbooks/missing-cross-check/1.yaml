@@ -1,0 +1,14 @@
+id: missing-cross-check
+version: 1
+replaces: null
+steps:
+  - id: custody-cross-check-missing
+    code: RECONCILIATION_UNAVAILABLE
+    when:
+      source_family: CUSTODY
+      custodian: any
+      feed_status: any
+    tell: custody-operations
+    by: next_business_day 10:00 ET
+    hold_report: true
+    line: Ask for the missing custody positions file so the cross-check can run.

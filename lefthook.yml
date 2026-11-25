@@ -1,0 +1,23 @@
+# A hook that cannot find lefthook fails instead of passing in silence.
+assert_lefthook_installed: true
+
+pre-commit:
+  commands:
+    format:
+      glob: "*.py"
+      run: uv run --frozen ruff format --check {staged_files}
+    lint:
+      glob: "*.py"
+      run: uv run --frozen ruff check {staged_files}
+    types:
+      glob: "*.py"
+      run: uv run --frozen pyright --project pyproject.toml
+    tests:
+      glob: "*.{py,yaml,yml,json,jsonl,html,md,toml}"
+      exclude: ["README.md", "guide/**"]
+      run: uv run --frozen pytest -m 'not browser'
+    # The documents and the published evidence: the page is what its runs make, every
+    # published run is live and on the freeze, and the README shows each figure.
+    documents:
+      glob: "{README.md,guide/**}"
+      run: uv run --frozen pytest tests/test_evidence.py tests/test_figures.py -k "public or page or published or figure"

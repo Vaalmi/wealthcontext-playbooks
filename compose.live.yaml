@@ -1,0 +1,7 @@
+# Laid over compose.yaml for a live run only: the triage agent's way out to the model's provider.
+services:
+  triage-agent:
+    networks: [agents, provider]
+
+networks:
+  provider: {}

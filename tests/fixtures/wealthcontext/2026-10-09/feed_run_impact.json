@@ -1,0 +1,64 @@
+{
+  "contract_version": "1.0",
+  "trace_id": "e02a79568d8a1078ab075cd60cb70c4f",
+  "result_id": "r_5ca3676bf49a4fa4933da0356bbaf953",
+  "status": "COMPLETE",
+  "as_of": "2026-10-09",
+  "valuation_date": "2026-10-09",
+  "known_as_of": "2026-10-31T16:00:00Z",
+  "calculated_at": "2026-11-22T04:57:41.717667Z",
+  "entitlement_revision": 2,
+  "policy_revision": "sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299",
+  "data": {
+    "run_id": "RUN-126659d184b2f1a9994bc0deeac832db475836db2779186e390aaa974b48d82d",
+    "source_system": "CUSTODY-B",
+    "feed": "custody_snapshots",
+    "business_date": "2026-10-09",
+    "status": "PARTIAL",
+    "upstream_status": "TIMEOUT",
+    "recorded_at": "2026-10-09T22:00:00Z",
+    "file_received": true,
+    "accepted_records": 19,
+    "rejected_records": 2,
+    "account_attribution": "MANIFEST",
+    "expected_account_count": 15,
+    "committed_account_count": 14,
+    "affected_account_count": 1,
+    "affected_household_count": 1,
+    "unattributed_account_count": 0,
+    "affected_accounts": {
+      "items": [
+        {
+          "account_id": "WC-AC-0016",
+          "manifest_account_id": "WC-AC-0016",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0008",
+          "household_attribution": "RESOLVED"
+        }
+      ],
+      "item_count": 1,
+      "total_item_count": 1,
+      "ordering": "account_id ASC (unresolved last), manifest_account_id ASC",
+      "truncated": false,
+      "next_cursor": null
+    },
+    "affected_households": {
+      "items": [
+        {
+          "household_id": "WC-HH-0008"
+        }
+      ],
+      "item_count": 1,
+      "total_item_count": 1,
+      "ordering": "household_id ASC",
+      "truncated": false,
+      "next_cursor": null
+    }
+  },
+  "quality_flags": [],
+  "source_refs": [
+    "h_47ef95b54afd41c098ecf543371d69ac"
+  ],
+  "metric_refs": [],
+  "error": null
+}

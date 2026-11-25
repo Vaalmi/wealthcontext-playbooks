@@ -1,0 +1,7 @@
+# Laid over compose.yaml for `make curation`: a layer of its own, on fresh volumes each time,
+# so that the curator's bundle is the same on any day and the layer's own records are untouched.
+name: wealthcontext-playbooks-curation
+
+services:
+  backend:
+    ports: !override ["127.0.0.1:8131:8000"]

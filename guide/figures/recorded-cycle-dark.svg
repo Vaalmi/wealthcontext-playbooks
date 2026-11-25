@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 1028 278" width="1028" height="278" role="img" aria-label="The recorded cycle in six steps: both dates triaged under the first playbooks; what arrived since, a memo, a correction and a gap report; the curator&#x27;s proposal; the gate and the approval; both dates triaged again under the second playbooks; a poisoned memo and a hostile proposal, and what stopped each. It replays with no API key.">
+<title>The recorded cycle in six steps: both dates triaged under the first playbooks; what arrived since, a memo, a correction and a gap report; the curator&#x27;s proposal; the gate and the approval; both dates triaged again under the second playbooks; a poisoned memo and a hostile proposal, and what stopped each. It replays with no API key.</title>
+<style>text{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif}.panel{fill:#161C23;stroke:#323B47}.tt{font-size:13px;font-weight:600;fill:#E5E9EE}.tt14{font-size:14px;font-weight:600;fill:#E5E9EE}.ts{font-size:11.5px;fill:#9AA4B1}.lbl{font-size:11px;fill:#9AA4B1}.zl{font-size:10.5px;letter-spacing:.08em;font-weight:600;fill:#9AA4B1}.chipt{font-size:11.5px;font-weight:600}.stepn{font-size:19px;font-weight:600;fill:#E5E9EE}.lbg{fill:#161C23}.zone{fill:#192028;stroke:#323B47;stroke-dasharray:5 4}.box{fill:#1D242D;stroke:#6A7584;stroke-width:1.1}.box.muted{fill:#252D38;stroke:#323B47}.box.ghost{fill:none;stroke:#6A7584;stroke-dasharray:6 4}.step{fill:#1D242D;stroke:#6A7584;stroke-width:2}.edge{fill:none;stroke:#A9B2BF;stroke-width:1.4}.edge.dash{stroke-dasharray:5 4}.head{fill:#A9B2BF}.person{fill:#6A7584}.accentt{fill:#8EB2F2}.box.accent,.step.accent{fill:#1D2C47;stroke:#8EB2F2}.edge.accent{stroke:#8EB2F2}.head.accent{fill:#8EB2F2}.okt{fill:#6FCB9A}.box.ok,.step.ok{fill:#163325;stroke:#6FCB9A}.edge.ok{stroke:#6FCB9A}.head.ok{fill:#6FCB9A}.warnt{fill:#E8B062}.box.warn,.step.warn{fill:#382813;stroke:#E8B062}.edge.warn{stroke:#E8B062}.head.warn{fill:#E8B062}.denyt{fill:#F28B83}.box.deny,.step.deny{fill:#3B1C1A;stroke:#F28B83}.edge.deny{stroke:#F28B83}.head.deny{fill:#F28B83}</style>
+<defs><marker id="head-base" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head base" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head accent" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head ok" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-warn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head warn" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-deny" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head deny" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+<rect class="panel" x="-13.5" y="-13.5" width="1027" height="277" rx="10"/>
+<path class="edge" d="M 116 52 L 228 52" marker-end="url(#head-base)"/>
+<path class="edge" d="M 280 52 L 392 52" marker-end="url(#head-base)"/>
+<path class="edge" d="M 444 52 L 556 52" marker-end="url(#head-base)"/>
+<path class="edge" d="M 608 52 L 720 52" marker-end="url(#head-base)"/>
+<path class="edge" d="M 772 52 L 884 52" marker-end="url(#head-base)"/>
+<circle class="step" cx="90" cy="52" r="22"/>
+<circle class="step" cx="254" cy="52" r="22"/>
+<circle class="step" cx="418" cy="52" r="22"/>
+<circle class="step accent" cx="582" cy="52" r="22"/>
+<circle class="step ok" cx="746" cy="52" r="22"/>
+<circle class="step deny" cx="910" cy="52" r="22"/>
+<rect class="box muted" x="20" y="186" width="960" height="50" rx="7"/>
+<text class="stepn" x="90" y="59" text-anchor="middle">1</text>
+<text class="tt14" x="90" y="104" text-anchor="middle">Triage, version 1</text>
+<text class="ts" x="90" y="124" text-anchor="middle">a failed feed and a</text>
+<text class="ts" x="90" y="141" text-anchor="middle">missing cross-check</text>
+<text class="stepn" x="254" y="59" text-anchor="middle">2</text>
+<text class="tt14" x="254" y="104" text-anchor="middle">What arrived since</text>
+<text class="ts" x="254" y="124" text-anchor="middle">a memo, a correction,</text>
+<text class="ts" x="254" y="141" text-anchor="middle">a gap report</text>
+<text class="stepn" x="418" y="59" text-anchor="middle">3</text>
+<text class="tt14" x="418" y="104" text-anchor="middle">The proposal</text>
+<text class="ts" x="418" y="124" text-anchor="middle">changed steps, each</text>
+<text class="ts" x="418" y="141" text-anchor="middle">next to what it rests on</text>
+<text class="stepn accentt" x="582" y="59" text-anchor="middle">4</text>
+<text class="tt14" x="582" y="104" text-anchor="middle">Gate and approval</text>
+<text class="ts" x="582" y="124" text-anchor="middle">each check&#x27;s result,</text>
+<text class="ts" x="582" y="141" text-anchor="middle">then who approved</text>
+<text class="stepn okt" x="746" y="59" text-anchor="middle">5</text>
+<text class="tt14" x="746" y="104" text-anchor="middle">Triage, version 2</text>
+<text class="ts" x="746" y="124" text-anchor="middle">both dates again, under</text>
+<text class="ts" x="746" y="141" text-anchor="middle">the second playbooks</text>
+<text class="stepn denyt" x="910" y="59" text-anchor="middle">6</text>
+<text class="tt14" x="910" y="104" text-anchor="middle">The attacks</text>
+<text class="ts" x="910" y="124" text-anchor="middle">a poisoned memo and a</text>
+<text class="ts" x="910" y="141" text-anchor="middle">hostile proposal, stopped</text>
+<text class="tt" x="500" y="208" text-anchor="middle">Replays with no API key</text>
+<text class="ts" x="500" y="224" text-anchor="middle">WealthContext&#x27;s reads are real, every check runs again, and only the models&#x27; replies come from the recording of the live cycle of 2026-11-24.</text>
+</svg>

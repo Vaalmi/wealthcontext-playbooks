@@ -1,0 +1,873 @@
+{
+  "origin": "live",
+  "scenario": "first-cycle",
+  "run": 3,
+  "freeze": "48b93fc77b3e0c63a78a9377397542e86cdd5f978e7e769bd7271ff505fadbcc",
+  "started_at": "2026-11-24T13:28:01+00:00",
+  "settings": {
+    "TRIAGE_MODEL": "openai:gpt-6-luna",
+    "CURATOR_MODEL": "openai:gpt-6.1-terra:high",
+    "CURATOR_MAX_DOLLARS": "2",
+    "TRIAGE_MAX_DOLLARS": "2",
+    "GATE_MAX_DOLLARS": "10"
+  },
+  "setup": {
+    "memos": [
+      {
+        "id": "memo-feed-outage-founding",
+        "sha256": "0792c022ce847d99b625d1eb35a5dcc2789f5e4b0c7aeded717ae968f832d425"
+      },
+      {
+        "id": "memo-missing-cross-check-founding",
+        "sha256": "16513ee21c32368d39a0aef5bcc42de4061895d2b71a73b52ee6ab970c44b297"
+      },
+      {
+        "id": "memo-custodian-b-feed-escalation",
+        "sha256": "1f3ed15ffe649620fa38f94113a6997e6e10028527f8dfdbc25361afea1a96d7"
+      }
+    ],
+    "triage": [
+      {
+        "date": "2026-10-15",
+        "state": "completed",
+        "notes": 7,
+        "with_a_step": 1,
+        "codes": [
+          "AMBIGUOUS_ENTITY",
+          "CLOSED_ACCOUNT_WITH_BALANCE",
+          "OWNERSHIP_CONFLICT",
+          "OWNERSHIP_CONFLICT",
+          "PRICE_STALE",
+          "REPORTING_HOUSEHOLD_CONFLICT",
+          "SOURCE_UNAVAILABLE"
+        ],
+        "failure": null,
+        "cost_usd": null
+      },
+      {
+        "date": "2026-10-09",
+        "state": "completed",
+        "notes": 6,
+        "with_a_step": 1,
+        "codes": [
+          "AMBIGUOUS_ENTITY",
+          "CLOSED_ACCOUNT_WITH_BALANCE",
+          "OWNERSHIP_CONFLICT",
+          "OWNERSHIP_CONFLICT",
+          "RECONCILIATION_UNAVAILABLE",
+          "REPORTING_HOUSEHOLD_CONFLICT"
+        ],
+        "failure": null,
+        "cost_usd": null
+      }
+    ],
+    "correction": {
+      "id": "correction-hnfpafekmljplgcg",
+      "state": "reviewed"
+    },
+    "gap_reports": [
+      {
+        "reference": "gap-report-apnhmmfjjomimnjh",
+        "code": "RECONCILIATION_UNAVAILABLE",
+        "summary": "The playbook says to hold the advisor's report whenever the cross-check is missing. An analyst says a missing cross-check alone is no reason to hold it."
+      }
+    ],
+    "cost_usd": "0.000000"
+  },
+  "setup_failed": [],
+  "curator_refused": null,
+  "curator_run": {
+    "id": "77c44d981185414990ab2e2bce9b80e2",
+    "state": "completed",
+    "stalled": false,
+    "failure": null,
+    "model": "openai:gpt-6.1-terra:high",
+    "calls_by": [
+      "openai:gpt-6.1-terra:high"
+    ],
+    "input_tokens": 3446,
+    "output_tokens": 1685,
+    "cost_usd": "0.011871",
+    "seconds": 26.3,
+    "bundle": {
+      "sha256": "a5110ae6c43acb5c3a722995b3e3234e0ca24d548aa91cb0438abcd44d02f9af",
+      "items": [
+        {
+          "kind": "firm_source",
+          "reference": "correction-hnfpafekmljplgcg"
+        },
+        {
+          "kind": "firm_source",
+          "reference": "memo-custodian-b-feed-escalation"
+        },
+        {
+          "kind": "firm_source",
+          "reference": "memo-feed-outage-founding"
+        },
+        {
+          "kind": "firm_source",
+          "reference": "memo-missing-cross-check-founding"
+        },
+        {
+          "kind": "gap_report",
+          "reference": "gap-report-apnhmmfjjomimnjh"
+        },
+        {
+          "kind": "playbooks_in_use",
+          "reference": "playbooks-in-use"
+        },
+        {
+          "kind": "triage_outcome_summary",
+          "reference": "triage-outcome-summary"
+        }
+      ]
+    },
+    "refused": [],
+    "proposal": {
+      "id": "0c8fb39c6024467d92fe88f4a3255f18",
+      "sha256": "0ebb9317ed7ab9ba7b37069631c4bc962a618da8dcd0773b14309b898ef4844c",
+      "changes": [
+        {
+          "change": "change",
+          "playbook": "feed-outage",
+          "version": 1,
+          "step": "portfolio-feed-failed",
+          "code": "SOURCE_UNAVAILABLE",
+          "when": {
+            "source_family": "PAS",
+            "custodian": "A",
+            "feed_status": "FAILED"
+          },
+          "tell": "portfolio-accounting",
+          "by": "same_day 20:00 ET",
+          "hold_report": true,
+          "line": "Ask for the failed portfolio accounting fetch to be run again.",
+          "rests_on": [
+            "memo-feed-outage-founding",
+            "memo-custodian-b-feed-escalation"
+          ]
+        },
+        {
+          "change": "add",
+          "playbook": "feed-outage",
+          "version": 1,
+          "step": "custodian-service-feed-failed",
+          "code": "SOURCE_UNAVAILABLE",
+          "when": {
+            "source_family": "PAS",
+            "custodian": "B",
+            "feed_status": "FAILED"
+          },
+          "tell": "custodian-b-service",
+          "by": "within 2 hours",
+          "hold_report": true,
+          "line": "Ask for the failed portfolio accounting fetch to be run again.",
+          "rests_on": [
+            "memo-custodian-b-feed-escalation"
+          ]
+        },
+        {
+          "change": "change",
+          "playbook": "missing-cross-check",
+          "version": 1,
+          "step": "custody-cross-check-missing",
+          "code": "RECONCILIATION_UNAVAILABLE",
+          "when": {
+            "source_family": "CUSTODY",
+            "custodian": "any",
+            "feed_status": "any"
+          },
+          "tell": "custody-operations",
+          "by": "next_business_day 10:00 ET",
+          "hold_report": false,
+          "line": "Ask for the missing custody positions file so the cross-check can run.",
+          "rests_on": [
+            "correction-hnfpafekmljplgcg",
+            "gap-report-apnhmmfjjomimnjh",
+            "memo-missing-cross-check-founding"
+          ]
+        }
+      ],
+      "disagreements": [
+        {
+          "between": [
+            "memo-custodian-b-feed-escalation",
+            "memo-feed-outage-founding"
+          ],
+          "about": "For a failed custodian B feed, the later memo replaces the earlier routing and deadline with the service desk within two hours."
+        },
+        {
+          "between": [
+            "correction-hnfpafekmljplgcg",
+            "memo-missing-cross-check-founding"
+          ],
+          "about": "The correction says not to hold the report for a missing cross-check alone; the memo requires a hold until the cross-check has run."
+        },
+        {
+          "between": [
+            "gap-report-apnhmmfjjomimnjh",
+            "memo-missing-cross-check-founding"
+          ],
+          "about": "For a partial custodian B custody feed, the gap report disputes the hold required by the memo."
+        }
+      ]
+    }
+  },
+  "gate": {
+    "id": "349ac2c8867d4becb44eeda78f8a82db",
+    "outcome": "passed",
+    "seconds": 42.5,
+    "checks": [
+      {
+        "check": "support",
+        "outcome": "passed",
+        "failures": []
+      },
+      {
+        "check": "personal",
+        "outcome": "passed",
+        "failures": []
+      },
+      {
+        "check": "guardrails",
+        "outcome": "passed",
+        "failures": []
+      },
+      {
+        "check": "base",
+        "outcome": "passed",
+        "failures": []
+      },
+      {
+        "check": "overlap",
+        "outcome": "passed",
+        "failures": []
+      },
+      {
+        "check": "held_out",
+        "outcome": "passed",
+        "failures": []
+      }
+    ],
+    "disagreements_found": [
+      [
+        "correction-hnfpafekmljplgcg",
+        "memo-missing-cross-check-founding"
+      ],
+      [
+        "gap-report-apnhmmfjjomimnjh",
+        "memo-missing-cross-check-founding"
+      ]
+    ],
+    "held_out": {
+      "case_set_sha256": "3509ff1e2454f69c9a645cd67af1d4795ba0bb18144d8ec67eea5f4f3213e423",
+      "writer": "Gemini 4 Neon",
+      "trial_model": "openai:gpt-6-luna",
+      "calls_by": [
+        "openai:gpt-6-luna"
+      ],
+      "graded": [
+        {
+          "case": "pas-a-failed-feed",
+          "in_use": "passed",
+          "kind": "regression",
+          "proposed": "passed"
+        },
+        {
+          "case": "pas-b-partial-feed",
+          "in_use": "passed",
+          "kind": "regression",
+          "proposed": "passed"
+        },
+        {
+          "case": "same-codes-without-a-failed-feed",
+          "in_use": "passed",
+          "kind": "regression",
+          "proposed": "passed"
+        },
+        {
+          "case": "warnings-no-playbook-covers",
+          "in_use": "passed",
+          "kind": "regression",
+          "proposed": "passed"
+        },
+        {
+          "case": "both-pas-feeds-fail-and-custody-b-times-out",
+          "in_use": "failed",
+          "kind": "new_rule",
+          "proposed": "passed"
+        },
+        {
+          "case": "custody-a-and-pas-a-failed",
+          "in_use": "failed",
+          "kind": "new_rule",
+          "proposed": "passed"
+        },
+        {
+          "case": "custody-b-partial-cross-check",
+          "in_use": "failed",
+          "kind": "new_rule",
+          "proposed": "passed"
+        },
+        {
+          "case": "pas-b-failed-feed",
+          "in_use": "failed",
+          "kind": "new_rule",
+          "proposed": "passed"
+        }
+      ],
+      "cost_usd": "0.002399",
+      "trials": [
+        {
+          "case": "pas-a-failed-feed",
+          "kind": "regression",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000070"
+        },
+        {
+          "case": "pas-a-failed-feed",
+          "kind": "regression",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000070"
+        },
+        {
+          "case": "pas-a-failed-feed",
+          "kind": "regression",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000070"
+        },
+        {
+          "case": "pas-b-partial-feed",
+          "kind": "regression",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000077"
+        },
+        {
+          "case": "pas-b-partial-feed",
+          "kind": "regression",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000079"
+        },
+        {
+          "case": "pas-b-partial-feed",
+          "kind": "regression",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000074"
+        },
+        {
+          "case": "same-codes-without-a-failed-feed",
+          "kind": "regression",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000146"
+        },
+        {
+          "case": "same-codes-without-a-failed-feed",
+          "kind": "regression",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000163"
+        },
+        {
+          "case": "same-codes-without-a-failed-feed",
+          "kind": "regression",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000146"
+        },
+        {
+          "case": "warnings-no-playbook-covers",
+          "kind": "regression",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e3",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000000"
+        },
+        {
+          "case": "warnings-no-playbook-covers",
+          "kind": "regression",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e3",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000000"
+        },
+        {
+          "case": "warnings-no-playbook-covers",
+          "kind": "regression",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            },
+            {
+              "exception": "e3",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000000"
+        },
+        {
+          "case": "both-pas-feeds-fail-and-custody-b-times-out",
+          "kind": "new_rule",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            },
+            {
+              "exception": "e2",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            },
+            {
+              "exception": "e3",
+              "state": "chosen",
+              "step": "feed-outage/custodian-service-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000219"
+        },
+        {
+          "case": "both-pas-feeds-fail-and-custody-b-times-out",
+          "kind": "new_rule",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            },
+            {
+              "exception": "e2",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            },
+            {
+              "exception": "e3",
+              "state": "chosen",
+              "step": "feed-outage/custodian-service-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000226"
+        },
+        {
+          "case": "both-pas-feeds-fail-and-custody-b-times-out",
+          "kind": "new_rule",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            },
+            {
+              "exception": "e2",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            },
+            {
+              "exception": "e3",
+              "state": "chosen",
+              "step": "feed-outage/custodian-service-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000228"
+        },
+        {
+          "case": "custody-a-and-pas-a-failed",
+          "kind": "new_rule",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            },
+            {
+              "exception": "e2",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000140"
+        },
+        {
+          "case": "custody-a-and-pas-a-failed",
+          "kind": "new_rule",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            },
+            {
+              "exception": "e2",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000134"
+        },
+        {
+          "case": "custody-a-and-pas-a-failed",
+          "kind": "new_rule",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/portfolio-feed-failed"
+            },
+            {
+              "exception": "e2",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000134"
+        },
+        {
+          "case": "custody-b-partial-cross-check",
+          "kind": "new_rule",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000082"
+        },
+        {
+          "case": "custody-b-partial-cross-check",
+          "kind": "new_rule",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000064"
+        },
+        {
+          "case": "custody-b-partial-cross-check",
+          "kind": "new_rule",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "missing-cross-check/custody-cross-check-missing"
+            },
+            {
+              "exception": "e2",
+              "state": "no_step",
+              "step": null
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000064"
+        },
+        {
+          "case": "pas-b-failed-feed",
+          "kind": "new_rule",
+          "trial": 1,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/custodian-service-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000071"
+        },
+        {
+          "case": "pas-b-failed-feed",
+          "kind": "new_rule",
+          "trial": 2,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/custodian-service-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000071"
+        },
+        {
+          "case": "pas-b-failed-feed",
+          "kind": "new_rule",
+          "trial": 3,
+          "state": "completed",
+          "failure": null,
+          "notes": [
+            {
+              "exception": "e1",
+              "state": "chosen",
+              "step": "feed-outage/custodian-service-feed-failed"
+            }
+          ],
+          "misses": [],
+          "cost_usd": "0.000071"
+        }
+      ]
+    }
+  },
+  "gate_refused": null,
+  "curator_run_id": "77c44d981185414990ab2e2bce9b80e2",
+  "gate_refusals": [],
+  "trials_in_no_gate_run": [],
+  "stopped": null,
+  "charged_until_counted": "0",
+  "charged_for": null,
+  "finished_at": "2026-11-24T13:29:16+00:00",
+  "cost_usd": "0.014270",
+  "outcome": "gate_passed",
+  "readings": {
+    "playbooks_changed": [
+      "feed-outage",
+      "missing-cross-check"
+    ],
+    "rests_on": [
+      "correction-hnfpafekmljplgcg",
+      "gap-report-apnhmmfjjomimnjh",
+      "memo-custodian-b-feed-escalation",
+      "memo-feed-outage-founding",
+      "memo-missing-cross-check-founding"
+    ],
+    "rests_on_a_gap_report": true,
+    "watched": {
+      "memo-custodian-b-feed-escalation": true,
+      "correction-hnfpafekmljplgcg": true
+    },
+    "disagreements_listed": [
+      [
+        "memo-custodian-b-feed-escalation",
+        "memo-feed-outage-founding"
+      ],
+      [
+        "correction-hnfpafekmljplgcg",
+        "memo-missing-cross-check-founding"
+      ],
+      [
+        "gap-report-apnhmmfjjomimnjh",
+        "memo-missing-cross-check-founding"
+      ]
+    ],
+    "checks_failed": [],
+    "trials": 24,
+    "trials_missed": 0
+  }
+}

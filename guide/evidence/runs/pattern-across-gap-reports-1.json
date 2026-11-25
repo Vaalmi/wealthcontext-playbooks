@@ -1,0 +1,185 @@
+{
+  "origin": "live",
+  "scenario": "pattern-across-gap-reports",
+  "run": 1,
+  "freeze": "48b93fc77b3e0c63a78a9377397542e86cdd5f978e7e769bd7271ff505fadbcc",
+  "started_at": "2026-11-24T13:23:36+00:00",
+  "settings": {
+    "TRIAGE_MODEL": "openai:gpt-6-luna",
+    "CURATOR_MODEL": "openai:gpt-6.1-terra:high",
+    "CURATOR_MAX_DOLLARS": "2",
+    "TRIAGE_MAX_DOLLARS": "2",
+    "GATE_MAX_DOLLARS": "10"
+  },
+  "setup": {
+    "memos": [
+      {
+        "id": "memo-feed-outage-founding",
+        "sha256": "0792c022ce847d99b625d1eb35a5dcc2789f5e4b0c7aeded717ae968f832d425"
+      },
+      {
+        "id": "memo-missing-cross-check-founding",
+        "sha256": "16513ee21c32368d39a0aef5bcc42de4061895d2b71a73b52ee6ab970c44b297"
+      }
+    ],
+    "triage": [
+      {
+        "date": "2026-10-12",
+        "state": "completed",
+        "notes": 7,
+        "with_a_step": 0,
+        "codes": [
+          "AMBIGUOUS_ENTITY",
+          "CLOSED_ACCOUNT_WITH_BALANCE",
+          "OWNERSHIP_CONFLICT",
+          "OWNERSHIP_CONFLICT",
+          "PRICE_STALE",
+          "PRICE_STALE",
+          "REPORTING_HOUSEHOLD_CONFLICT"
+        ],
+        "failure": null,
+        "cost_usd": null
+      },
+      {
+        "date": "2026-10-13",
+        "state": "completed",
+        "notes": 7,
+        "with_a_step": 0,
+        "codes": [
+          "AMBIGUOUS_ENTITY",
+          "CLOSED_ACCOUNT_WITH_BALANCE",
+          "OWNERSHIP_CONFLICT",
+          "OWNERSHIP_CONFLICT",
+          "PRICE_STALE",
+          "PRICE_STALE",
+          "REPORTING_HOUSEHOLD_CONFLICT"
+        ],
+        "failure": null,
+        "cost_usd": null
+      },
+      {
+        "date": "2026-10-14",
+        "state": "completed",
+        "notes": 7,
+        "with_a_step": 0,
+        "codes": [
+          "AMBIGUOUS_ENTITY",
+          "CLOSED_ACCOUNT_WITH_BALANCE",
+          "OWNERSHIP_CONFLICT",
+          "OWNERSHIP_CONFLICT",
+          "PRICE_STALE",
+          "PRICE_STALE",
+          "REPORTING_HOUSEHOLD_CONFLICT"
+        ],
+        "failure": null,
+        "cost_usd": null
+      }
+    ],
+    "correction": null,
+    "gap_reports": [
+      {
+        "reference": "gap-report-cpogpdeemjibjfge",
+        "code": "PRICE_STALE",
+        "summary": "A stale price arrived with no playbook step for it. The analyst told the Pricing Desk and held the advisor's report until a fresh price came in."
+      },
+      {
+        "reference": "gap-report-cpogpdeemjibjfge",
+        "code": "PRICE_STALE",
+        "summary": "A stale price arrived with no playbook step for it. The analyst told the Pricing Desk and held the advisor's report until a fresh price came in."
+      },
+      {
+        "reference": "gap-report-mhamfjbhogcdddmm",
+        "code": "PRICE_STALE",
+        "summary": "Stale prices again, and still no step. The Pricing Desk was told that morning, and the advisor's report waited for the fresh price."
+      },
+      {
+        "reference": "gap-report-mhamfjbhogcdddmm",
+        "code": "PRICE_STALE",
+        "summary": "Stale prices again, and still no step. The Pricing Desk was told that morning, and the advisor's report waited for the fresh price."
+      },
+      {
+        "reference": "gap-report-niidbebifbappmih",
+        "code": "PRICE_STALE",
+        "summary": "A third day of stale prices with no step. Each time the Pricing Desk was asked for a fresh price before the end of the day, and the report was held until it landed."
+      },
+      {
+        "reference": "gap-report-niidbebifbappmih",
+        "code": "PRICE_STALE",
+        "summary": "A third day of stale prices with no step. Each time the Pricing Desk was asked for a fresh price before the end of the day, and the report was held until it landed."
+      }
+    ],
+    "cost_usd": "0.000000"
+  },
+  "setup_failed": [],
+  "curator_refused": null,
+  "curator_run": {
+    "id": "16b2934c4b62476bbc78cc2a7f4ed91d",
+    "state": "completed_no_change",
+    "stalled": false,
+    "failure": null,
+    "model": "openai:gpt-6.1-terra:high",
+    "calls_by": [
+      "openai:gpt-6.1-terra:high"
+    ],
+    "input_tokens": 3071,
+    "output_tokens": 914,
+    "cost_usd": "0.007641",
+    "seconds": 19.4,
+    "bundle": {
+      "sha256": "de2485a907ee7dc962b7a8a1f1f8c0be3b075cd3317db0e2f44bdac928607833",
+      "items": [
+        {
+          "kind": "firm_source",
+          "reference": "memo-feed-outage-founding"
+        },
+        {
+          "kind": "firm_source",
+          "reference": "memo-missing-cross-check-founding"
+        },
+        {
+          "kind": "gap_report",
+          "reference": "gap-report-cpogpdeemjibjfge"
+        },
+        {
+          "kind": "gap_report",
+          "reference": "gap-report-mhamfjbhogcdddmm"
+        },
+        {
+          "kind": "gap_report",
+          "reference": "gap-report-niidbebifbappmih"
+        },
+        {
+          "kind": "playbooks_in_use",
+          "reference": "playbooks-in-use"
+        },
+        {
+          "kind": "triage_outcome_summary",
+          "reference": "triage-outcome-summary"
+        }
+      ]
+    },
+    "refused": [],
+    "proposal": null
+  },
+  "gate": null,
+  "gate_refused": null,
+  "curator_run_id": "16b2934c4b62476bbc78cc2a7f4ed91d",
+  "gate_refusals": [],
+  "trials_in_no_gate_run": [],
+  "stopped": null,
+  "charged_until_counted": "0",
+  "charged_for": null,
+  "finished_at": "2026-11-24T13:23:58+00:00",
+  "cost_usd": "0.007641",
+  "outcome": "no_change",
+  "readings": {
+    "playbooks_changed": [],
+    "rests_on": [],
+    "rests_on_a_gap_report": false,
+    "watched": {},
+    "disagreements_listed": [],
+    "checks_failed": [],
+    "trials": 0,
+    "trials_missed": 0
+  }
+}

@@ -1,0 +1,84 @@
+# The layer. Only the backend is on WealthContext's network, and only it is given the
+# operations token. Each agent is on a network of its own, with the backend and no way out.
+name: wealthcontext-playbooks
+
+services:
+  backend:
+    build:
+      context: .
+      target: backend
+    env_file: [.local/backend.env]
+    environment:
+      PLAYBOOKS_DATABASE: /data/playbooks.sqlite
+      PLAYBOOKS_FOLDER: /app/playbooks
+      PLAYBOOKS_TRIAGE_LOG: /data/triage-log.jsonl
+      WEALTHCONTEXT_URL: http://app:8000
+      TRIAGE_AGENT_URL: http://triage-agent:8000
+      CURATOR_URL: http://curator:8000
+      PLAYBOOKS_CASES: /app/cases
+    # The playbook folder is seeded from the image the first time. The triage log names
+    # accounts, so it is in a volume of its own with the database.
+    volumes: [records:/data, store:/app/playbooks]
+    ports: ["127.0.0.1:${PLAYBOOKS_PORT:-8100}:8000"]
+    networks: [edge, agents, curation, wealthcontext]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 3s
+      timeout: 4s
+      retries: 20
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  triage-agent:
+    build:
+      context: .
+      target: triage_agent
+    env_file: [.local/triage-agent.env]
+    environment:
+      PLAYBOOKS_BACKEND_URL: http://backend:8000
+      LANGSMITH_TRACING: "false"
+    networks: [agents]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ping', timeout=3)"]
+      interval: 3s
+      timeout: 4s
+      retries: 20
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  curator:
+    build:
+      context: .
+      target: curator
+    env_file: [.local/curator.env]
+    environment:
+      PLAYBOOKS_BACKEND_URL: http://backend:8000
+      LANGSMITH_TRACING: "false"
+    networks: [curation]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ping', timeout=3)"]
+      interval: 3s
+      timeout: 4s
+      retries: 20
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+networks:
+  edge: {}
+  agents:
+    internal: true
+  curation:
+    internal: true
+  wealthcontext:
+    external: true
+    name: wcplaybooks-wealthcontext_default
+
+volumes:
+  records: {}
+  store: {}

@@ -1,0 +1,3 @@
+# The ledger holds the hash of these files' exact bytes.
+/playbooks/** -text
+/sources/** -text

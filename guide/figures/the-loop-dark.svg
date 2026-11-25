@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 1028 568" width="1028" height="568" role="img" aria-label="The whole loop. WealthContext&#x27;s warnings become exceptions by fixed rules. The triage agent picks a playbook step for each or says none applies, the backend checks the pick, and a triage note with a receipt comes out. The agent files a gap report for what the playbooks miss. Gap reports and firm sources go to the curator, which proposes a change; the gate runs six checks; the playbook owner approves or refuses; an approved change is a new playbook version in use. A failed check leaves the playbooks unchanged. The ledger records every source, gap report, proposal, check result, approval and refusal; triage runs are kept in a log of their own.">
+<title>The whole loop. WealthContext&#x27;s warnings become exceptions by fixed rules. The triage agent picks a playbook step for each or says none applies, the backend checks the pick, and a triage note with a receipt comes out. The agent files a gap report for what the playbooks miss. Gap reports and firm sources go to the curator, which proposes a change; the gate runs six checks; the playbook owner approves or refuses; an approved change is a new playbook version in use. A failed check leaves the playbooks unchanged. The ledger records every source, gap report, proposal, check result, approval and refusal; triage runs are kept in a log of their own.</title>
+<style>text{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif}.panel{fill:#161C23;stroke:#323B47}.tt{font-size:13px;font-weight:600;fill:#E5E9EE}.tt14{font-size:14px;font-weight:600;fill:#E5E9EE}.ts{font-size:11.5px;fill:#9AA4B1}.lbl{font-size:11px;fill:#9AA4B1}.zl{font-size:10.5px;letter-spacing:.08em;font-weight:600;fill:#9AA4B1}.chipt{font-size:11.5px;font-weight:600}.stepn{font-size:19px;font-weight:600;fill:#E5E9EE}.lbg{fill:#161C23}.zone{fill:#192028;stroke:#323B47;stroke-dasharray:5 4}.box{fill:#1D242D;stroke:#6A7584;stroke-width:1.1}.box.muted{fill:#252D38;stroke:#323B47}.box.ghost{fill:none;stroke:#6A7584;stroke-dasharray:6 4}.step{fill:#1D242D;stroke:#6A7584;stroke-width:2}.edge{fill:none;stroke:#A9B2BF;stroke-width:1.4}.edge.dash{stroke-dasharray:5 4}.head{fill:#A9B2BF}.person{fill:#6A7584}.accentt{fill:#8EB2F2}.box.accent,.step.accent{fill:#1D2C47;stroke:#8EB2F2}.edge.accent{stroke:#8EB2F2}.head.accent{fill:#8EB2F2}.okt{fill:#6FCB9A}.box.ok,.step.ok{fill:#163325;stroke:#6FCB9A}.edge.ok{stroke:#6FCB9A}.head.ok{fill:#6FCB9A}.warnt{fill:#E8B062}.box.warn,.step.warn{fill:#382813;stroke:#E8B062}.edge.warn{stroke:#E8B062}.head.warn{fill:#E8B062}.denyt{fill:#F28B83}.box.deny,.step.deny{fill:#3B1C1A;stroke:#F28B83}.edge.deny{stroke:#F28B83}.head.deny{fill:#F28B83}</style>
+<defs><marker id="head-base" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head base" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head accent" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head ok" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-warn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head warn" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-deny" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head deny" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+<rect class="panel" x="-13.5" y="-13.5" width="1027" height="567" rx="10"/>
+<rect class="zone" x="8" y="112" width="984" height="364" rx="12"/>
+<text class="zl" x="22" y="132">WEALTHCONTEXT PLAYBOOKS</text>
+<path class="edge" d="M 295 92 L 295 150" marker-end="url(#head-base)"/>
+<path class="edge" d="M 380 185 L 400 185" marker-end="url(#head-base)"/>
+<path class="edge" d="M 570 185 L 590 185" marker-end="url(#head-base)"/>
+<path class="edge ok" d="M 760 185 L 780 185" marker-end="url(#head-ok)"/>
+<path class="edge ok" d="M 190 258 L 675 258 L 675 220" marker-end="url(#head-ok)"/>
+<path class="edge ok" d="M 485 258 L 485 220" marker-end="url(#head-ok)"/>
+<path class="edge warn" d="M 865 220 L 865 300" marker-end="url(#head-warn)"/>
+<path class="edge" d="M 780 340 L 760 340" marker-end="url(#head-base)"/>
+<path class="edge" d="M 780 382 L 760 382" marker-end="url(#head-base)"/>
+<path class="edge" d="M 590 360 L 570 360" marker-end="url(#head-base)"/>
+<path class="edge accent" d="M 400 360 L 380 360" marker-end="url(#head-accent)"/>
+<path class="edge ok" d="M 210 360 L 190 360" marker-end="url(#head-ok)"/>
+<path class="edge deny" d="M 485 395 L 485 424" marker-end="url(#head-deny)"/>
+<rect class="box muted" x="210" y="30" width="170" height="62" rx="7"/>
+<rect class="box ok" x="20" y="150" width="170" height="250" rx="7"/>
+<rect class="box" x="210" y="150" width="170" height="70" rx="7"/>
+<rect class="box" x="400" y="150" width="170" height="70" rx="7"/>
+<rect class="box accent" x="590" y="150" width="170" height="70" rx="7"/>
+<rect class="box ok" x="780" y="150" width="170" height="70" rx="7"/>
+<rect class="box warn" x="780" y="300" width="170" height="52" rx="7"/>
+<rect class="box" x="780" y="368" width="170" height="52" rx="7"/>
+<rect class="box" x="590" y="325" width="170" height="70" rx="7"/>
+<rect class="box accent" x="400" y="325" width="170" height="70" rx="7"/>
+<rect class="box accent" x="210" y="325" width="170" height="70" rx="7"/>
+<rect class="box deny" x="400" y="424" width="170" height="40" rx="7"/>
+<rect class="box muted" x="20" y="488" width="960" height="40" rx="7"/>
+<text class="tt" x="295" y="58" text-anchor="middle">WealthContext</text>
+<text class="ts" x="295" y="74" text-anchor="middle">unchanged, read-only</text>
+<text class="ts" x="396" y="58" text-anchor="start">Read through three of its published read routes, signed in as operations.</text>
+<text class="ts" x="396" y="74" text-anchor="start">Nothing in WealthContext changes, and its database is never opened.</text>
+<text class="tt okt" x="105" y="197" text-anchor="middle">Playbooks</text>
+<text class="ts" x="105" y="213" text-anchor="middle">the firm&#x27;s steps for</text>
+<text class="ts" x="105" y="228" text-anchor="middle">each kind of warning</text>
+<text class="ts" x="105" y="243" text-anchor="middle"></text>
+<text class="ts" x="105" y="258" text-anchor="middle">one file per version,</text>
+<text class="ts" x="105" y="273" text-anchor="middle">never written over</text>
+<text class="ts" x="105" y="288" text-anchor="middle"></text>
+<text class="ts" x="105" y="303" text-anchor="middle">a new version on</text>
+<text class="ts" x="105" y="318" text-anchor="middle">each approval</text>
+<text class="ts" x="105" y="333" text-anchor="middle"></text>
+<text class="ts" x="105" y="348" text-anchor="middle">every note names</text>
+<text class="ts" x="105" y="363" text-anchor="middle">the version it used</text>
+<text class="tt" x="295" y="174.5" text-anchor="middle">Exceptions</text>
+<text class="ts" x="295" y="190.5" text-anchor="middle">built by fixed rules</text>
+<text class="ts" x="295" y="205.5" text-anchor="middle">from the warnings</text>
+<text class="tt" x="485" y="174.5" text-anchor="middle">Triage agent</text>
+<text class="ts" x="485" y="190.5" text-anchor="middle">picks a step from a list,</text>
+<text class="ts" x="485" y="205.5" text-anchor="middle">or says none applies</text>
+<text class="tt accentt" x="675" y="174.5" text-anchor="middle">Backend check</text>
+<text class="ts" x="675" y="190.5" text-anchor="middle">by fixed fields; one retry,</text>
+<text class="ts" x="675" y="205.5" text-anchor="middle">then a note with no action</text>
+<text class="tt okt" x="865" y="174.5" text-anchor="middle">Triage note</text>
+<text class="ts" x="865" y="190.5" text-anchor="middle">who to tell, by when,</text>
+<text class="ts" x="865" y="205.5" text-anchor="middle">hold or not; a receipt</text>
+<rect class="lbg" x="258.4" y="242" width="83.2" height="16" rx="3"/>
+<text class="lbl okt" x="300" y="254" text-anchor="middle">steps in use</text>
+<rect class="lbg" x="265.6" y="114" width="58.8" height="16" rx="3"/>
+<text class="lbl" x="295" y="126" text-anchor="middle">warnings</text>
+<text class="tt warnt" x="865" y="323" text-anchor="middle">Gap reports</text>
+<text class="ts" x="865" y="339" text-anchor="middle">what the playbooks miss</text>
+<text class="tt" x="865" y="391" text-anchor="middle">Firm sources</text>
+<text class="ts" x="865" y="407" text-anchor="middle">memos, corrections</text>
+<text class="tt" x="675" y="349.5" text-anchor="middle">Curator</text>
+<text class="ts" x="675" y="365.5" text-anchor="middle">proposes a change, and</text>
+<text class="ts" x="675" y="380.5" text-anchor="middle">cites what it rests on</text>
+<text class="tt accentt" x="485" y="349.5" text-anchor="middle">Gate</text>
+<text class="ts" x="485" y="365.5" text-anchor="middle">six checks, each result</text>
+<text class="ts" x="485" y="380.5" text-anchor="middle">recorded</text>
+<text class="tt accentt" x="295" y="349.5" text-anchor="middle">Playbook owner</text>
+<text class="ts" x="295" y="365.5" text-anchor="middle">approves by hash,</text>
+<text class="ts" x="295" y="380.5" text-anchor="middle">or refuses with a reason</text>
+<rect class="lbg" x="805.1" y="252" width="119.8" height="16" rx="3"/>
+<text class="lbl warnt" x="865" y="264" text-anchor="middle">filed by the agent</text>
+<text class="tt denyt" x="485" y="441" text-anchor="middle">Refused</text>
+<text class="ts" x="485" y="457" text-anchor="middle">playbooks unchanged</text>
+<text class="lbl" x="580" y="449" text-anchor="start">when any check fails</text>
+<text class="tt" x="500" y="512.5" text-anchor="middle">The ledger records every source, gap report, proposal, check result, approval and refusal, each line chained to the one before.</text>
+</svg>

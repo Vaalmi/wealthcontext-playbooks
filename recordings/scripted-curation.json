@@ -1,0 +1,89 @@
+{
+  "origin": "scripted",
+  "about": "Written for this repository, not captured from a model: no model has been given this request. It holds one proposal for one bundle: the first cycle's three memos, the committed correction, its gap report and the two founding playbooks as committed, approved by the playbook owner. It shows that the parts connect, and is no evidence of what a model would propose.",
+  "replies": [
+    {
+      "request": "c2a4f8d0fe74308c1414a2efe8bfba2eca67ac817e2db491652709e9fe38986c",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "submit_proposal",
+          "args": {
+            "changes": [
+              {
+                "change": "change",
+                "playbook": "feed-outage",
+                "version": 1,
+                "step": "portfolio-feed-failed",
+                "code": "SOURCE_UNAVAILABLE",
+                "when": {
+                  "source_family": "PAS",
+                  "feed_status": "FAILED",
+                  "custodian": "A"
+                },
+                "tell": "portfolio-accounting",
+                "by": "same_day 20:00 ET",
+                "hold_report": true,
+                "line": "Ask for the failed portfolio accounting fetch to be run again.",
+                "rests_on": [
+                  "memo-custodian-b-feed-escalation",
+                  "memo-feed-outage-founding"
+                ]
+              },
+              {
+                "change": "add",
+                "playbook": "feed-outage",
+                "version": 1,
+                "step": "custodian-b-portfolio-feed-failed",
+                "code": "SOURCE_UNAVAILABLE",
+                "when": {
+                  "source_family": "PAS",
+                  "feed_status": "FAILED",
+                  "custodian": "B"
+                },
+                "tell": "custodian-b-service",
+                "by": "within 2 hours",
+                "hold_report": true,
+                "line": "Ask the custodian's service desk for the failed fetch to be run again.",
+                "rests_on": [
+                  "memo-custodian-b-feed-escalation"
+                ]
+              },
+              {
+                "change": "change",
+                "playbook": "missing-cross-check",
+                "version": 1,
+                "step": "custody-cross-check-missing",
+                "code": "RECONCILIATION_UNAVAILABLE",
+                "when": {
+                  "source_family": "CUSTODY",
+                  "custodian": "any",
+                  "feed_status": "any"
+                },
+                "tell": "custody-operations",
+                "by": "next_business_day 10:00 ET",
+                "hold_report": false,
+                "line": "Ask for the missing custody positions file so the cross-check can run.",
+                "rests_on": [
+                  "correction-hnfpafekmljplgcg",
+                  "gap-report-apnhmmfjjomimnjh",
+                  "memo-missing-cross-check-founding"
+                ]
+              }
+            ],
+            "disagreements": [
+              {
+                "between": [
+                  "memo-missing-cross-check-founding",
+                  "correction-hnfpafekmljplgcg",
+                  "gap-report-apnhmmfjjomimnjh"
+                ],
+                "about": "The founding memo holds the advisor's report for a missing cross-check. The correction says that alone is no reason to hold it."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "contract_version": "1.0",
+  "trace_id": "3b8ed17617c32ec37d1330b42effb90a",
+  "result_id": "r_7aeafba6182b41d179a7f34d8edaaf65",
+  "status": "COMPLETE",
+  "as_of": "2026-10-20",
+  "valuation_date": "2026-10-20",
+  "known_as_of": "2026-10-31T16:00:00Z",
+  "calculated_at": "2026-10-31T16:00:00Z",
+  "entitlement_revision": 2,
+  "policy_revision": "sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299",
+  "data": {
+    "items": [
+      {
+        "id": "RUN-4a9d509835c4a5413e80d58b039f652a26ca2c985d5066c3546815516247d19c",
+        "source_system": "PAS-B",
+        "feed": "pas_snapshots",
+        "business_date": "2026-10-20",
+        "status": "FAILED",
+        "upstream_status": "FAILED",
+        "recorded_at": "2026-10-20T22:00:00Z",
+        "imported_at": "2026-10-20T22:00:01Z",
+        "accepted_records": 0,
+        "rejected_records": 0,
+        "content_hash": "b9a97a11dc68ae1e3e208f314d553145296e26e96e7f5b5dc4e7b204a1ec4928",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-5d29b1e1ca26031be3c69931f806b790a08baf19087a2ecadcb1aa4c2d1376ab",
+        "source_system": "CUSTODY-B",
+        "feed": "custody_snapshots",
+        "business_date": "2026-10-20",
+        "status": "TIMEOUT",
+        "upstream_status": "TIMEOUT",
+        "recorded_at": "2026-10-20T22:00:00Z",
+        "imported_at": "2026-10-20T22:00:01Z",
+        "accepted_records": 0,
+        "rejected_records": 0,
+        "content_hash": "3b148c4b7762ce127ee2ce29d100a046e6b7da53d180d431cec904cab0883a98",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-c133bd0a2490fda3a0a8450881dbab02181113cfe3ecc1dbfb7fe0c562a3a44e",
+        "source_system": "PAS-A",
+        "feed": "pas_snapshots",
+        "business_date": "2026-10-20",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-20T22:00:00Z",
+        "imported_at": "2026-10-20T22:00:01Z",
+        "accepted_records": 0,
+        "rejected_records": 0,
+        "content_hash": "1ba066f9394bdb446ac945e15f780ed46a05682c86eaac1cbf7895ec70e1c7ca",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      }
+    ],
+    "item_count": 3,
+    "total_item_count": 3,
+    "ordering": "recorded_at DESC, id ASC",
+    "truncated": false,
+    "next_cursor": null
+  },
+  "quality_flags": [],
+  "source_refs": [
+    "h_4a1c32d6782775c28c802935ffb1c1c8"
+  ],
+  "metric_refs": [],
+  "error": null
+}

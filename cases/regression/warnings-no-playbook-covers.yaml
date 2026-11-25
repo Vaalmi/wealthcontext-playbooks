@@ -1,0 +1,447 @@
+case: warnings-no-playbook-covers
+kind: regression
+date: '2026-10-23'
+cutoff: '2026-10-31T16:00:00Z'
+about: Every feed ran. A stale price, a closed account with a balance, and an ambiguous person.
+exceptions:
+- id: e1
+  code: PRICE_STALE
+  subjects:
+  - WC-AC-0005:WC-SEC-0003
+  feed_facts: null
+- id: e2
+  code: CLOSED_ACCOUNT_WITH_BALANCE
+  subjects:
+  - WC-AC-0023
+  feed_facts: null
+- id: e3
+  code: AMBIGUOUS_ENTITY
+  subjects:
+  - WC-PER-0003
+  feed_facts: null
+notices: []
+envelopes:
+  get_data_quality_report:
+    contract_version: '1.0'
+    trace_id: b05d71400bbd22add6ea22405ce28a4b
+    result_id: r_eabed6c546426c297f89ed57c4019f56
+    status: INCOMPLETE
+    as_of: '2026-10-23'
+    valuation_date: '2026-10-23'
+    known_as_of: '2026-10-31T16:00:00Z'
+    calculated_at: '2026-10-31T16:00:00Z'
+    entitlement_revision: 2
+    policy_revision: sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299
+    data:
+      items:
+      - household_id: WC-HH-0002
+        complete: false
+        flags:
+          items:
+          - &id003
+            code: AMBIGUOUS_ENTITY
+            severity: warning
+            subject: WC-PER-0003
+            detail:
+              entity_type: person
+          item_count: 1
+          total_item_count: 1
+          ordering: subject ASC, code ASC, detail ASC
+          truncated: false
+          next_cursor: null
+        missing_component_count: 1
+        warning_count: 1
+        info_count: 0
+      - household_id: WC-HH-0003
+        complete: true
+        flags:
+          items:
+          - &id001
+            code: PRICE_STALE
+            severity: warning
+            subject: WC-AC-0005:WC-SEC-0003
+            detail:
+              price_date: '2026-10-16'
+              age_business_days: 5
+              tolerance_business_days: 0
+          item_count: 1
+          total_item_count: 1
+          ordering: subject ASC, code ASC, detail ASC
+          truncated: false
+          next_cursor: null
+        missing_component_count: 0
+        warning_count: 1
+        info_count: 0
+      - household_id: WC-HH-0012
+        complete: true
+        flags:
+          items:
+          - &id002
+            code: CLOSED_ACCOUNT_WITH_BALANCE
+            severity: warning
+            subject: WC-AC-0023
+            detail: {}
+          item_count: 1
+          total_item_count: 1
+          ordering: subject ASC, code ASC, detail ASC
+          truncated: false
+          next_cursor: null
+        missing_component_count: 0
+        warning_count: 1
+        info_count: 0
+      item_count: 3
+      total_item_count: 3
+      ordering: household_id ASC
+      truncated: false
+      next_cursor: null
+      evaluated_household_count: 14
+      households_with_issues_count: 3
+      incomplete_household_count: 1
+      quality_flag_count: 3
+    quality_flags:
+    - *id001
+    - *id002
+    - *id003
+    source_refs:
+    - h_127dc76980951620dc4543f632119d2f
+    metric_refs: []
+    error: null
+  feed_runs:
+    contract_version: '1.0'
+    trace_id: 209878068eeb4da3064f0378918e9c13
+    result_id: r_6282b1def20d851b48edfd690c421964
+    status: COMPLETE
+    as_of: '2026-10-23'
+    valuation_date: '2026-10-23'
+    known_as_of: '2026-10-31T16:00:00Z'
+    calculated_at: '2026-10-31T16:00:00Z'
+    entitlement_revision: 2
+    policy_revision: sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299
+    data:
+      items:
+      - id: RUN-751561e30c144c745007258fcc744702336f4fa0c59896bd367e191da4b131e4
+        source_system: PAS-A
+        feed: pas_snapshots
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 36
+        rejected_records: 0
+        content_hash: ff755c153d3e9e63169137acff6470b5bf97e6baa570e7277f743fcbb57f43ae
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-9e0e9b1c6a991250d3e9d73a9dca2c74a89c25a8ea505869c4c5cdbde020449c
+        source_system: CUSTODY-A
+        feed: prices
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 9
+        rejected_records: 0
+        content_hash: 01e3bc7112284a204cd66aa4288dfbb854c8eeddb69bf89b073f085b16c27e59
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-e6bdc82584879fb87d2e45bda742471e1dc7c602855546117862f6b60020af64
+        source_system: CUSTODY-B
+        feed: custody_snapshots
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 21
+        rejected_records: 0
+        content_hash: 0a4bf625933aa10597ccbc61366bba1ebd666bd84cc6f1e28d0ed821e372ec84
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-c655b5a059e35d35484eb8f174c7fe459c5a0b7acb811026d2fdbe410c23da04
+        source_system: FX
+        feed: fx
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 4
+        rejected_records: 0
+        content_hash: 78118dbd3573b4a76b2b3dd5e904a2ddf35a69bcc4999596967b9e704b6d5f19
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-dd622736cf05ed6c2bfa3f3a475f36f1d0c16d9b1f49a61f4513e9f8cc307677
+        source_system: SECMASTER
+        feed: securities
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 20
+        rejected_records: 0
+        content_hash: 13eb39ff475c687d73c6139a360818190ec9e6fe0b54f8240d5b150071dbe91b
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-bf6cb49fedf6d3d11e3d1e8ac4497cd6905c5a8899bf10ca6f9667be37097d21
+        source_system: CUSTODY-B
+        feed: custody_accounts
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 15
+        rejected_records: 0
+        content_hash: e16c59ab4de23362c67411a4eff6551fd3588f8349c618ba65160a5041df22cc
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-07bb70a393383033c33d373aaf6b05556e2043e50fd808c7ea4664f26a999f0e
+        source_system: CUSTODY-A
+        feed: custody_snapshots
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 36
+        rejected_records: 0
+        content_hash: 94dcf948314ce7d63bdd164532b3e683c06bca2e2fc6530fd10d5c62db0794e0
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-477c6b5ee23d9fd741449eb6bd5b9e632e38a03b6e94e87c969b34ee2bcabc7f
+        source_system: CUSTODY-B
+        feed: prices
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 10
+        rejected_records: 0
+        content_hash: 368b1067e23780124f43a3d974577591fa8d204b29517642740cb3a68c49c828
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-d371bfa2a2ef24ad07d686fedf79f9c24c5b83cb8cb6e05033b4d4dadd923d78
+        source_system: PAS-A
+        feed: lots
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 6
+        rejected_records: 0
+        content_hash: 5e4fed3724989d135be64244f93bbed5d1db5c724f2a9c485a9519f842eee267
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-9b992dfb779fffcaa4dfcf5b9bb3dc295703407bb0311bbdfb247cd5418669b7
+        source_system: PAS-A
+        feed: transactions
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 1
+        rejected_records: 0
+        content_hash: 9682fff59892fd7810094676222f68ba7b1e72951421eb8b710c87cb4d7a85a0
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-ed0638af4a04284c8531c55391583c3481f463cfb95e790b55c9270357c086ba
+        source_system: CRM
+        feed: crm
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 174
+        rejected_records: 0
+        content_hash: 78096dfa1591317dce1e5e9ccab23c3e4c44369cee6f2bd2a4ab748518bba440
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-ac012671b4ad5187de7def8aaccdaf832e840d77215e76667923cfaf0cba877e
+        source_system: PAS-B
+        feed: lots
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 0
+        rejected_records: 0
+        content_hash: 23edbf26532f36a195e69889ebd2a9541983cab69d479f4c3758b7958c47be00
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-931bcab6cbf5df0540268da26a48773aa77578394fd39885c8c4a1a01b287305
+        source_system: CUSTODY-A
+        feed: custody_accounts
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 16
+        rejected_records: 0
+        content_hash: 6051f6f564cf4155e591415acc9c4dd9e89c33548ce5e43b6e6a09341872c825
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-e91039dac6bafd8aa98676ae519922421527c5909fadf5d7ff88e2f00c56cc2b
+        source_system: PAS-B
+        feed: pas_snapshots
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 0
+        rejected_records: 15
+        content_hash: 6e3631b1701d8a7e73e320e0922120127dedf76510dbcc7ba65cb18798c23064
+        rejects:
+          items:
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:1
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:10
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:11
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:12
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:13
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:14
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:15
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:2
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:3
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:4
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:5
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:6
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:7
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:8
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          - id: RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:9
+            reason: ACCOUNT_MANIFEST_MISMATCH
+            raw_payload: '[REDACTED]'
+          item_count: 15
+          total_item_count: 15
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      - id: RUN-046d6b3dad06e50ab080123fa7fb829659b913ba9ce939898baf5de27e4918c0
+        source_system: PAS-B
+        feed: transactions
+        business_date: '2026-10-23'
+        status: SUCCESS
+        upstream_status: SUCCESS
+        recorded_at: '2026-10-23T22:00:00Z'
+        imported_at: '2026-10-23T22:00:01Z'
+        accepted_records: 0
+        rejected_records: 0
+        content_hash: 10d24a9322b83280770ca490d23a9c822de511b193809dc2bc4b5ab4bfb9e7ff
+        rejects:
+          items: []
+          item_count: 0
+          total_item_count: 0
+          ordering: id ASC
+          truncated: false
+          next_cursor: null
+      item_count: 15
+      total_item_count: 15
+      ordering: recorded_at DESC, id ASC
+      truncated: false
+      next_cursor: null
+    quality_flags: []
+    source_refs:
+    - h_aa4ad2ddda03b791ec02ffec09d8bd25
+    metric_refs: []
+    error: null
+  feed_run_impact: {}

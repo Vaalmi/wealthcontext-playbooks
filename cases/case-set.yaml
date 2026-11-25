@@ -1,0 +1,6 @@
+# The held-out cases' writer: the model that wrote every expected note, from the firm
+# sources and each case's inputs alone. The gate refuses to run when the model for its
+# trials, or the model of the curator run that made the proposal, is this one.
+writer:
+  name: Gemini 4 Neon
+  model: gemini-4-neon

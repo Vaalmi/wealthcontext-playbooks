@@ -1,0 +1,14 @@
+id: feed-outage
+version: 1
+replaces: null
+steps:
+  - id: portfolio-feed-failed
+    code: SOURCE_UNAVAILABLE
+    when:
+      source_family: PAS
+      custodian: any
+      feed_status: FAILED
+    tell: portfolio-accounting
+    by: same_day 20:00 ET
+    hold_report: true
+    line: Ask for the failed portfolio accounting fetch to be run again.

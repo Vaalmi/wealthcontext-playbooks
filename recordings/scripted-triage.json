@@ -1,0 +1,182 @@
+{
+  "origin": "scripted",
+  "about": "Written for this repository, not captured from a model: no model has been given these requests. For the failed PAS-B feed of 2026-10-15 and the partial CUSTODY-B run of 2026-10-09 it holds the steps that the playbooks' conditions give, no gap report for each warning that no playbook covers (as many as one triage of each of the two dates asks, and at least two for each warning of the other dates from 2026-10-01 to 2026-10-18), and a gap report for the committed correction's review. It shows that the parts connect, and is no evidence of how often a model chooses correctly or files well.",
+  "replies": [
+    {
+      "request": "4f659ad59fa97652594d680f41506a3921194a8a51f9c57ba95ed74517cf9319",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ]
+    },
+    {
+      "request": "4e6f7132ba269b6258898d615935968e2bca63500590d15fa9ac920630601b32",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ]
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "a898aa284c8cc9313de7a8149e88e9ca256144f29ff4923ba3b47fad950631b2",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "a898aa284c8cc9313de7a8149e88e9ca256144f29ff4923ba3b47fad950631b2",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "07b0cd6cc113eeab4e96ed0f438aab8bd5459cd7d4ec60f51552d6f77ab83e9a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbook says to hold the advisor's report whenever the cross-check is missing. An analyst says a missing cross-check alone is no reason to hold it."
+          }
+        }
+      ]
+    }
+  ]
+}

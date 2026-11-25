@@ -1,0 +1,84 @@
+{
+  "contract_version": "1.0",
+  "trace_id": "3b1da4c33157dd306d32979f87dbcd10",
+  "result_id": "r_a4621385f5fd9731f084ad82f7bceeb5",
+  "status": "COMPLETE",
+  "as_of": "2026-10-20",
+  "valuation_date": "2026-10-20",
+  "known_as_of": "2026-10-31T16:00:00Z",
+  "calculated_at": "2026-10-31T16:00:00Z",
+  "entitlement_revision": 2,
+  "policy_revision": "sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299",
+  "data": {
+    "run_id": "RUN-4a9d509835c4a5413e80d58b039f652a26ca2c985d5066c3546815516247d19c",
+    "source_system": "PAS-B",
+    "feed": "pas_snapshots",
+    "business_date": "2026-10-20",
+    "status": "FAILED",
+    "upstream_status": "FAILED",
+    "recorded_at": "2026-10-20T22:00:00Z",
+    "file_received": false,
+    "accepted_records": 0,
+    "rejected_records": 0,
+    "account_attribution": "MANIFEST",
+    "expected_account_count": 15,
+    "committed_account_count": 12,
+    "affected_account_count": 3,
+    "affected_household_count": 3,
+    "unattributed_account_count": 0,
+    "affected_accounts": {
+      "items": [
+        {
+          "account_id": "WC-AC-0002",
+          "manifest_account_id": "WC-AC-0002",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0001",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0004",
+          "manifest_account_id": "WC-AC-0004",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0002",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0006",
+          "manifest_account_id": "WC-AC-0006",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0003",
+          "household_attribution": "RESOLVED"
+        }
+      ],
+      "item_count": 3,
+      "total_item_count": 3,
+      "ordering": "account_id ASC (unresolved last), manifest_account_id ASC",
+      "truncated": false,
+      "next_cursor": null
+    },
+    "affected_households": {
+      "items": [
+        {
+          "household_id": "WC-HH-0001"
+        },
+        {
+          "household_id": "WC-HH-0002"
+        },
+        {
+          "household_id": "WC-HH-0003"
+        }
+      ],
+      "item_count": 3,
+      "total_item_count": 3,
+      "ordering": "household_id ASC",
+      "truncated": false,
+      "next_cursor": null
+    }
+  },
+  "quality_flags": [],
+  "source_refs": [
+    "h_52167e40bcdad5daed6e741e0df09a91"
+  ],
+  "metric_refs": [],
+  "error": null
+}

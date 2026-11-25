@@ -1,0 +1,19 @@
+# Synthetic: written for this repository, and no person's words. It is a correction as the
+# layer records it: fixed fields and one reason, with an ID made from that content.
+id: correction-hnfpafekmljplgcg
+kind: correction
+date: '2026-10-09'
+desk: null
+scope:
+  playbook: missing-cross-check
+  code: RECONCILIATION_UNAVAILABLE
+  when:
+    source_family: CUSTODY
+    custodian: any
+    feed_status: any
+correction:
+  version: 1
+  step: custody-cross-check-missing
+  field: hold_report
+  should_be: false
+text: A missing cross-check alone is no reason to hold an advisor's report.

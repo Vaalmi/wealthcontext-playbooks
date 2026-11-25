@@ -1,0 +1,152 @@
+{
+  "origin": "recorded",
+  "about": "Captured from openai:gpt-6.1-terra:high on 2026-11-24: each reply that model gave, in order, under the hash of the request it answered.",
+  "replies": [
+    {
+      "request": "46a59b4818eaa3054fbb5ef1c90510719ea4ba7064d6f849007bc32453e3f81d",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "submit_proposal",
+          "args": {
+            "changes": [
+              {
+                "change": "change",
+                "playbook": "feed-outage",
+                "version": 1,
+                "step": "portfolio-feed-failed",
+                "code": "SOURCE_UNAVAILABLE",
+                "when": {
+                  "source_family": "PAS",
+                  "custodian": "A",
+                  "feed_status": "FAILED"
+                },
+                "tell": "portfolio-accounting",
+                "by": "same_day 20:00 ET",
+                "hold_report": true,
+                "line": "Ask for the failed portfolio accounting fetch to be run again.",
+                "rests_on": [
+                  "memo-feed-outage-founding",
+                  "memo-custodian-b-feed-escalation"
+                ]
+              },
+              {
+                "change": "add",
+                "playbook": "feed-outage",
+                "version": 1,
+                "step": "custodian-b-portfolio-feed-failed",
+                "code": "SOURCE_UNAVAILABLE",
+                "when": {
+                  "source_family": "PAS",
+                  "custodian": "B",
+                  "feed_status": "FAILED"
+                },
+                "tell": "custodian-b-service",
+                "by": "within 2 hours",
+                "hold_report": true,
+                "line": "Ask for the failed portfolio accounting fetch to be run again.",
+                "rests_on": [
+                  "memo-custodian-b-feed-escalation"
+                ]
+              },
+              {
+                "change": "change",
+                "playbook": "missing-cross-check",
+                "version": 1,
+                "step": "custody-cross-check-missing",
+                "code": "RECONCILIATION_UNAVAILABLE",
+                "when": {
+                  "source_family": "CUSTODY",
+                  "custodian": "any",
+                  "feed_status": "any"
+                },
+                "tell": "custody-operations",
+                "by": "next_business_day 10:00 ET",
+                "hold_report": false,
+                "line": "Ask for the missing custody positions file so the cross-check can run.",
+                "rests_on": [
+                  "memo-missing-cross-check-founding",
+                  "correction-hnfpafekmljplgcg",
+                  "gap-report-jppcplnlkpefiaak"
+                ]
+              }
+            ],
+            "disagreements": [
+              {
+                "between": [
+                  "memo-feed-outage-founding",
+                  "memo-custodian-b-feed-escalation"
+                ],
+                "about": "For a failed custodian B portfolio feed, the later memo replaces the earlier routing and deadline; the report hold remains."
+              },
+              {
+                "between": [
+                  "memo-missing-cross-check-founding",
+                  "correction-hnfpafekmljplgcg"
+                ],
+                "about": "The memo holds the report until the cross-check runs; the correction says a missing cross-check alone does not warrant a hold."
+              },
+              {
+                "between": [
+                  "memo-missing-cross-check-founding",
+                  "gap-report-jppcplnlkpefiaak"
+                ],
+                "about": "For a partial custodian B custody feed, the memo calls for a hold; the gap report says the missing cross-check alone does not warrant one."
+              }
+            ]
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "7ec8a0bbb4fc7a6fbb8defdc12a0d6e32982c0405df692f90159308fc7378383",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "submit_proposal",
+          "args": {
+            "changes": [
+              {
+                "change": "change",
+                "playbook": "missing-cross-check",
+                "version": 2,
+                "step": "custody-cross-check-missing",
+                "code": "RECONCILIATION_UNAVAILABLE",
+                "when": {
+                  "source_family": "CUSTODY",
+                  "custodian": "any",
+                  "feed_status": "any"
+                },
+                "tell": "custody-operations",
+                "by": "next_business_day 10:00 ET",
+                "hold_report": true,
+                "line": "Ask for the missing custody positions file so the cross-check can run.",
+                "rests_on": [
+                  "memo-missing-cross-check-founding"
+                ]
+              }
+            ],
+            "disagreements": [
+              {
+                "between": [
+                  "memo-missing-cross-check-founding",
+                  "correction-hnfpafekmljplgcg"
+                ],
+                "about": "The memo calls for holding the report when the custody cross-check is missing; the correction says not to hold it for that reason alone."
+              },
+              {
+                "between": [
+                  "memo-feed-outage-founding",
+                  "memo-custodian-b-feed-escalation"
+                ],
+                "about": "For a failed custodian B portfolio feed, the later memo replaces the founding memo's portfolio accounting escalation with escalation to the custodian B service desk within two hours."
+              }
+            ]
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+<!doctype html>
+{% macro note_article(note) %}
+<article class="note" data-state="{{ note.state }}">
+  <h3>{{ note.code }}</h3>
+  <ul class="subjects" aria-label="Subjects">
+  {%- for subject in note.subjects %}
+    <li><code>{{ subject }}</code></li>
+  {%- endfor %}
+  </ul>
+  {% if note.step %}
+  <dl class="action">
+    <dt>Step</dt><dd>{{ note.step.playbook }} version {{ note.step.version }}, {{ note.step.id }}</dd>
+    {%- if note.action %}
+    <dt>Tell</dt><dd>{{ note.action.desk }}</dd>
+    <dt>By</dt><dd>{{ note.action.by }}</dd>
+    <dt>Hold instruction</dt>
+    <dd>{% if note.action.hold_report %}Hold the advisor's report. This is an instruction to a person and blocks nothing.{% else %}Do not hold the advisor's report.{% endif %}</dd>
+    <dt>Wording</dt><dd>{{ note.action.line }}</dd>
+    {%- endif %}
+  </dl>
+  {% endif %}
+  {% if not note.action %}
+  <p class="statement">{{ note.statement or "The choice is pending." }}</p>
+  {% endif %}
+  <div class="receipt">
+    <h4>Triage receipt</h4>
+    <dl>
+      <dt>Date</dt><dd>{{ note.receipt.date }}</dd>
+      <dt>Knowledge cutoff</dt><dd>{{ note.receipt.cutoff }}</dd>
+      <dt>Playbook set</dt>
+      <dd>{{ note.receipt.playbook_set.id }} version {{ note.receipt.playbook_set.version }}, hash <code>{{ note.receipt.playbook_set.hash }}</code></dd>
+      {% if note.receipt.feed_run %}
+      <dt>Feed run</dt>
+      <dd>{{ note.receipt.feed_run.source_system }} {{ note.receipt.feed_run.feed }} {{ note.receipt.feed_run.status }}, <code>{{ note.receipt.feed_run.id }}</code></dd>
+      {% endif %}
+      {% for read in note.receipt.reads %}
+      <dt>{{ read.operation }}</dt>
+      <dd>result <code class="result">{{ read.result_id }}</code>, trace <code class="trace">{{ read.trace_id }}</code></dd>
+      {% endfor %}
+    </dl>
+  </div>
+</article>
+{% endmacro %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WealthContext Playbooks</title>
+{%- if cycle and cycle.status.state == "running" %}
+<meta http-equiv="refresh" content="2; url=/">
+{%- endif %}
+<style>
+  :root { color-scheme: light dark; --line: #8886; --quiet: light-dark(#555, #aaa); }
+  body { font: 15px/1.45 system-ui, sans-serif; margin: 0 auto; max-width: 64rem; padding: 1.5rem 1rem 4rem; }
+  h1 { font-size: 1.4rem; margin: 0; }
+  h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; }
+  h3 { font-size: 1rem; margin: 0 0 .4rem; }
+  .quiet { color: var(--quiet); }
+  article { border: 1px solid var(--line); border-radius: 6px; padding: .75rem 1rem; margin: .75rem 0; }
+  code { font: .85em ui-monospace, monospace; overflow-wrap: anywhere; }
+  dl { display: grid; grid-template-columns: minmax(0, max-content) minmax(0, 1fr); gap: .15rem .9rem; margin: .4rem 0; }
+  dt { color: var(--quiet); overflow-wrap: anywhere; }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  .subjects { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .2rem .8rem; margin: .3rem 0; }
+  .receipt { border-top: 1px solid var(--line); margin-top: .6rem; padding-top: .4rem; font-size: .85rem; }
+  .receipt h4 { margin: 0; }
+  blockquote { margin: .3rem 0; padding: .1rem .8rem; border-left: 3px solid var(--line); white-space: pre-wrap; }
+  ol#steps { padding-left: 1.2rem; }
+  ol#steps > li { margin: 1.5rem 0; }
+  ol#steps h3 { font-size: 1.05rem; }
+  table { border-collapse: collapse; font-size: .9rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; border-bottom: 1px solid var(--line); padding: .2rem .6rem .2rem 0; vertical-align: top; }
+  button { font: inherit; padding: .5rem 1rem; border-radius: 6px; border: 1px solid var(--line); cursor: pointer; }
+  .scripted { border: 1px solid var(--line); border-radius: 6px; padding: .5rem .8rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>WealthContext Playbooks</h1>
+  <p class="quiet">Triage of the warnings WealthContext reports to operations, by the firm's playbooks.
+    Synthetic data only. A demonstration: no claim of compliance, and not financial advice.</p>
+</header>
+{% macro run_block(run) %}
+<h4>Triage of {{ run.date }}, knowledge cutoff {{ run.cutoff }}: playbook set version {{ run.playbook_set.version }}</h4>
+<p class="quiet">Run <a href="/triage-runs/{{ run.id }}"><code>{{ run.id }}</code></a>, {{ run.state }}. Choices by {% for model in run.usage.models %}<code>{{ model }}</code>{% if not loop.last %}, {% endif %}{% else %}no model{% endfor %}. {{ run.notes | length }} notes, and {{ run.notices | length }} informational notices, which need none.</p>
+{% for note in run.notes %}
+{{ note_article(note) }}
+{% endfor %}
+{% endmacro %}
+{% macro cited(source) %}
+<div class="cited">
+  <p><code>{{ source.reference }}</code>, {{ source.kind | replace("_", " ") }}{% if source.date %} of {{ source.date }}{% endif %}{% if source.desk %} from {{ source.desk }}{% endif %}</p>
+  <blockquote>{{ source.words }}</blockquote>
+</div>
+{% endmacro %}
+{% macro checks_block(gate_run) %}
+<p>Gate run <code>{{ gate_run.id }}</code> on playbook set version {{ gate_run.playbook_set.version }} (<code>{{ gate_run.playbook_set.hash }}</code>), by the {{ gate_run.who | replace("_", " ") }} at {{ gate_run.at }}: <strong class="outcome">{{ gate_run.outcome }}</strong>.</p>
+<table class="checks">
+  <tr><th>Check</th><th>Result</th><th>Why</th></tr>
+  {%- for check in gate_run.checks %}
+  <tr data-check="{{ check.check }}" data-outcome="{{ check.outcome }}"><td>{{ check.check | replace("_", " ") }}</td><td>{{ check.outcome | replace("_", " ") }}</td>
+    <td>{% for failure in check.failures %}{% if failure.step %}<code>{{ failure.step }}</code>: {% endif %}{{ failure.line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>
+  {%- endfor %}
+</table>
+{% endmacro %}
+{% macro decision_block(decision) %}
+<p class="decision">{{ decision.decision | capitalize }} by the {{ decision.who | replace("_", " ") }} at {{ decision.at }}, ledger line {{ decision.line }}.
+  {%- if decision.why.reason %} Reason: {{ decision.why.reason | replace("_", " ") }}.{% endif %}</p>
+{% if decision.why.rulings %}
+<ul class="rulings">
+  {%- for ruling in decision.why.rulings %}
+  <li>{% if ruling.change %}Change {{ ruling.change }}, between{% else %}Between{% endif %} {{ ruling.between | join(" and ") }}: ruled for <code>{{ ruling.ruled_for }}</code></li>
+  {%- endfor %}
+</ul>
+{% endif %}
+{% if decision.what_changed.versions %}
+<ul class="versions">
+  {%- for each in decision.what_changed.versions %}
+  <li>{{ each.id }} version {{ each.version }} put in use, <code>{{ each.sha256 }}</code></li>
+  {%- endfor %}
+</ul>
+{% endif %}
+{% endmacro %}
+
+{% if cycle %}
+<section id="cycle">
+<h2>The recorded cycle</h2>
+<p>One whole cycle of the firm's knowledge, on WealthContext's synthetic data: the reads from WealthContext are real, every check is real, and only the models' replies come from a recording. The firm's people are personas of the synthetic firm: an analyst, and a playbook owner who rules as the first cycle describes.</p>
+{% set ev = cycle.evidence %}
+{% if ev and ev.models %}
+<div class="scripted" id="recording">
+{% for model in ev.models %}
+  <p>Replies by <code>{{ model }}</code>.
+  {%- if "(scripted)" in model %} <strong>This recording is scripted:</strong> its replies were written for this repository and were never given by a model. It shows that the parts connect, and is no evidence of how a model would choose, file or propose.
+  {%- elif "(recorded)" in model %} The replies were captured from a model and are read from a file: no model runs here, and no key is needed.{% if model in ev.captured %} The recording says: {{ ev.captured[model] }}{% endif %} It is one run: it shows the cycle running end to end on that model, not how often a model chooses, files or proposes well.{% endif %}</p>
+{% endfor %}
+</div>
+{% endif %}
+<p id="cycle-state" data-state="{{ cycle.status.state }}">
+{%- if cycle.status.state == "not_run" %}
+  {%- if cycle.status.offered %} The cycle has not run on this layer yet.{% else %} The cycle runs once, on a layer whose records are still empty, and this one's are not. Start the layer again on fresh volumes to run it.{% endif %}
+{%- elif cycle.status.state == "running" %} The cycle is running: step {{ cycle.status.step }} of six. This page reloads by itself.
+{%- elif cycle.status.state == "done" %} The cycle ran from {{ cycle.status.started_at }} to {{ cycle.status.finished_at }}.
+{%- else %} The cycle stopped at step {{ cycle.status.step }}: {{ cycle.status.line }}
+{%- endif %}</p>
+{% if cycle.status.offered %}
+<form method="post" action="/cycle"><button type="submit" id="run-cycle">Run the recorded cycle</button></form>
+{% endif %}
+{% if ev %}
+<ol id="steps">
+<li class="step" data-step="1"><h3>{{ titles[1] }}</h3>
+  {% for run in ev.first %}{{ run_block(run) }}{% else %}<p class="waiting">Not yet.</p>{% endfor %}
+</li>
+<li class="step" data-step="2"><h3>{{ titles[2] }}</h3>
+  {% if not ev.change and not ev.corrections %}<p class="waiting">Not yet.</p>{% endif %}
+  {% for memo in ev.change %}
+  <h4>The memo</h4>
+  <p><code>{{ memo.id }}</code> of {{ memo.date }} from {{ memo.desk }}, taken in by the playbook owner. Its scope: {{ memo.scope.playbook }}, {{ memo.scope.code }}, {{ memo.scope.when.source_family }} {{ memo.scope.when.custodian }} {{ memo.scope.when.feed_status }}. Hash <code>{{ memo.sha256 }}</code>.</p>
+  <blockquote>{{ memo.text }}</blockquote>
+  {% endfor %}
+  {% for correction in ev.corrections %}
+  <h4>The analyst's correction</h4>
+  <p><code>{{ correction.source_id }}</code>, against step {{ correction.step }} of {{ correction.scope.playbook }} version {{ correction.version }} on the note of {{ correction.date }}: {{ correction.field | replace("_", " ") }} should be <strong>{{ correction.should_be }}</strong>. Its review is {{ correction.state }}.</p>
+  <blockquote>{{ correction.reason }}</blockquote>
+  {% endfor %}
+  {% for report in ev.reports %}
+  <h4>The agent's gap report</h4>
+  <p><code>{{ report.reference }}</code>, {{ report.state }}: {{ report.playbook }} version {{ report.version }}, {{ report.code }}, on WealthContext trace <code>{{ report.trace_id }}</code>.</p>
+  <blockquote>{{ report.summary }}</blockquote>
+  {% endfor %}
+</li>
+<li class="step" data-step="3"><h3>{{ titles[3] }}</h3>
+  {% if ev.shown %}
+  {% if ev.curator_run %}<p class="quiet">Curator run <code>{{ ev.curator_run.id }}</code> on model <code>{{ ev.curator_run.model }}</code>, bundle <code>{{ ev.curator_run.bundle.sha256 }}</code> of {{ ev.curator_run.bundle.items | length }} items. Proposal <code>{{ ev.shown.id }}</code>, hash <code>{{ ev.shown.sha256 }}</code>.</p>{% endif %}
+  {% for each in ev.shown.changes %}
+  <article class="change">
+    <h4>{{ each.change.change | capitalize }} {{ each.change.playbook }}/{{ each.change.step }} ({% if each.change.version is none %}a new playbook{% else %}version {{ each.change.version }}{% endif %})</h4>
+    {% if each.change.change != "remove" %}
+    <dl>
+      <dt>Warning</dt><dd>{{ each.change.code }}</dd>
+      <dt>When</dt><dd>{{ each.change.when.source_family }}, custodian {{ each.change.when.custodian }}, {{ each.change.when.feed_status }}</dd>
+      <dt>Tell</dt><dd>{{ each.desk }}</dd>
+      <dt>By</dt><dd>{{ each.change.by }}</dd>
+      <dt>Hold</dt><dd>{{ "yes" if each.change.hold_report else "no" }}</dd>
+      <dt>Wording</dt><dd>{{ each.change.line }}</dd>
+    </dl>
+    {% endif %}
+    <p>It rests on:</p>
+    {% for source in each.cites %}{{ cited(source) }}{% endfor %}
+  </article>
+  {% endfor %}
+  {% for disagreement in ev.shown.disagreements %}
+  <p class="disagreement">The proposal names a disagreement between {{ disagreement.between | join(", ") }}: {{ disagreement.about }}</p>
+  {% endfor %}
+  {% else %}<p class="waiting">Not yet.</p>{% endif %}
+</li>
+<li class="step" data-step="4"><h3>{{ titles[4] }}</h3>
+  {% if ev.proposal and ev.proposal.gate_runs %}
+  {% for gate_run in ev.proposal.gate_runs %}
+  {{ checks_block(gate_run) }}
+  {% if gate_run.held_out %}
+  <p>The held-out cases: case set <code>{{ gate_run.held_out.case_set_sha256 }}</code>, whose expected notes {{ gate_run.held_out.writer }} wrote, graded by fixed rules. {{ gate_run.held_out.trials | length }} trials on the triage agent, model <code>{{ gate_run.held_out.trial_model }}</code>.</p>
+  <table id="held-out">
+    <tr><th>Case</th><th>Kind</th><th>Under the playbooks in use</th><th>Once the proposal is made</th></tr>
+    {%- for case in gate_run.held_out.graded %}
+    <tr data-kind="{{ case.kind }}"><td>{{ case.case }}</td><td>{{ case.kind | replace("_", "-") }}</td><td>{{ case.in_use }}</td><td>{{ case.proposed }}</td></tr>
+    {%- endfor %}
+  </table>
+  <p class="quiet">A new-rule case is written for the rule the sources change, so it fails under the playbooks in use.</p>
+  {% endif %}
+  {% endfor %}
+  {% if ev.proposal.decision %}{{ decision_block(ev.proposal.decision) }}{% endif %}
+  {% else %}<p class="waiting">Not yet.</p>{% endif %}
+</li>
+<li class="step" data-step="5"><h3>{{ titles[5] }}</h3>
+  {% for run in ev.again %}{{ run_block(run) }}{% else %}<p class="waiting">Not yet.</p>{% endfor %}
+</li>
+<li class="step" data-step="6"><h3>{{ titles[6] }}</h3>
+  {% if not ev.poisoned and not ev.checked %}<p class="waiting">Not yet.</p>{% endif %}
+  {% for memo in ev.poisoned %}
+  <h4>The poisoned memo</h4>
+  <p><code>{{ memo.id }}</code> of {{ memo.date }} from {{ memo.desk }}. Its scope names a playbook that does not exist ({{ memo.scope.playbook }}). It asks:</p>
+  <blockquote>{{ memo.text }}</blockquote>
+  {% for run in ev.poisoned_runs %}
+  <p class="poisoned-run">Curator run <code>{{ run.id }}</code> was given it in its bundle (<code>{{ run.bundle.sha256 }}</code>) and ended <strong>{{ run.state | replace("_", " ") }}</strong>.
+    {%- if run.state == "completed_no_change" %} The curator proposed no change, so nothing reached the gate and nothing was approved.{% endif %}</p>
+  {% endfor %}
+  {% for each in ev.poisoned_proposals %}
+  <p>The curator proposed <code>{{ each.proposal.id }}</code>, which is {{ each.proposal.state | replace("_", " ") }}.</p>
+  {% for gate_run in each.gate_runs %}{{ checks_block(gate_run) }}{% endfor %}
+  {% if each.decision %}{{ decision_block(each.decision) }}{% endif %}
+  {% endfor %}
+  {% endfor %}
+  {% for proposal in ev.checked %}
+  <h4>A hostile proposal, handed straight to the checks</h4>
+  <p>Proposal <code>{{ proposal.id }}</code>, checked and never to be approved, ledger line {{ ev.checked_lines.get(proposal.id, "") }}. It asks for a line that tells a person to carry yesterday's prices forward.</p>
+  {% if proposal.content %}{% for change in proposal.content.changes %}{% if change.line %}<blockquote>{{ change.line }}</blockquote>{% endif %}{% endfor %}{% endif %}
+  {% for gate_run in proposal.gate_runs %}{{ checks_block(gate_run) }}{% endfor %}
+  {% endfor %}
+</li>
+</ol>
+{% endif %}
+</section>
+{% endif %}
+
+<h2>Playbooks in use</h2>
+<p>Set <code>{{ playbooks.id }}</code> version {{ playbooks.version }}, hash <code>{{ playbooks.hash }}</code></p>
+<ul id="playbooks">
+{%- for each in playbooks.versions %}
+  <li>{{ each.id }} version {{ each.version }}, in use{% if playbooks.has_approval(each.id) %}, approved by the playbook owner{% else %}: no approval is recorded for it, so it gives no action{% endif %}</li>
+{%- else %}
+  <li>None is in use: no approved step applies to any warning.</li>
+{%- endfor %}
+</ul>
+
+{% if not run %}
+<p id="empty">No triage run yet.</p>
+{% else %}
+<main>
+<h2>Triage of {{ run.date }}, knowledge cutoff {{ run.cutoff }}</h2>
+<p id="state">The run is <strong>{{ run.state }}</strong>{% if run.failure %}: {{ run.failure }}{% endif %}
+  {%- if run.stalled %}, and stalled: nothing has been heard from the triage agent for five minutes. The analyst can start it again.{% endif %}</p>
+{% for model in run.usage.models %}
+<p id="model">Choices by <code>{{ model }}</code>.
+  {%- if model.startswith("replay:") %}
+  No model ran: the replies were read from a file.
+  {%- if "(scripted)" in model %} They were written for this repository and were never given by a model.{% endif %}
+  {%- endif %}</p>
+{% endfor %}
+
+<h2>Triage notes</h2>
+{% for note in run.notes %}
+{{ note_article(note) }}
+{% endfor %}
+
+<h2>Informational notices</h2>
+<p class="quiet">These need no action and get no note.</p>
+<ul id="notices">
+{%- for notice in run.notices %}
+  <li>{{ notice.code }} <code>{{ notice.subject }}</code></li>
+{%- endfor %}
+</ul>
+
+<h2>Triage runs</h2>
+<ul id="runs">
+{%- for each in runs %}
+  <li><a href="/triage-runs/{{ each.id }}">{{ each.date }}, started {{ each.started_at }}</a>: {{ each.state }}{% if each.stalled %}, stalled{% endif %}</li>
+{%- endfor %}
+</ul>
+</main>
+{% endif %}
+{% if register %}
+<section id="register">
+<h2>The register</h2>
+<h3>Playbooks and their versions</h3>
+<table id="register-versions">
+  <tr><th>Playbook</th><th>Version</th><th>State</th><th>Approval</th><th>Hash</th></tr>
+  {%- for each in register.versions %}
+  <tr><td>{{ each.playbook }}</td><td>{{ each.version }}</td><td>{{ each.state | replace("_", " ") }}</td><td>{{ "by the playbook owner" if each.approved else "none recorded" }}</td><td><code>{{ each.sha256 }}</code></td></tr>
+  {%- endfor %}
+</table>
+<h3>Gap reports</h3>
+<table id="register-gap-reports">
+  <tr><th>Reference</th><th>Status</th><th>Playbook</th><th>Warning</th><th>Summary</th></tr>
+  {%- for report in register.reports %}
+  <tr><td><code>{{ report.reference }}</code></td><td>{{ report.state }}{% if report.dismissed %}: {{ report.dismissed | replace("_", " ") }}{% endif %}</td><td>{{ report.playbook or "none" }}{% if report.version %} version {{ report.version }}{% endif %}</td><td>{{ report.code }}</td><td>{{ report.summary }}</td></tr>
+  {%- else %}
+  <tr><td colspan="5">None filed.</td></tr>
+  {%- endfor %}
+</table>
+<h3>Curator runs</h3>
+<table id="register-curator-runs">
+  <tr><th>Run</th><th>State</th><th>Model</th><th>Bundle</th><th>Proposal</th></tr>
+  {%- for run in register.curator_runs %}
+  <tr><td><code>{{ run.id }}</code></td><td>{{ run.state | replace("_", " ") }}</td><td><code>{{ run.model }}</code></td><td><code>{{ run.bundle.sha256 }}</code></td><td>{% if run.proposal %}<code>{{ run.proposal.id }}</code>{% else %}none{% endif %}</td></tr>
+  {%- else %}
+  <tr><td colspan="5">None yet.</td></tr>
+  {%- endfor %}
+</table>
+<h3>Proposals, gate results, approvals and refusals</h3>
+<table id="register-proposals">
+  <tr><th>Proposal</th><th>State</th><th>From</th><th>Gate results</th><th>Decision</th></tr>
+  {%- for proposal in register.proposals %}
+  <tr><td><code>{{ proposal.id }}</code></td><td>{{ proposal.state | replace("_", " ") }}</td><td>{% if proposal.run_id %}curator run <code>{{ proposal.run_id }}</code>{% else %}handed in to be checked{% endif %}</td>
+    <td>{% for gate_run in proposal.gate_runs %}{{ gate_run.kind }} {{ gate_run.outcome }}{% for check in gate_run.checks %}{% if check.outcome == "failed" %} ({{ check.check }} failed){% endif %}{% endfor %}{% if not loop.last %}; {% endif %}{% else %}none{% endfor %}{% for refused in proposal.gate_refusals %}; the gate could not run: {{ refused.reason | replace("_", " ") }}{% endfor %}</td>
+    <td>{% if proposal.decision %}{{ proposal.decision.decision }} by the {{ proposal.decision.who | replace("_", " ") }} at {{ proposal.decision.at }}{% else %}none{% endif %}</td></tr>
+  {%- else %}
+  <tr><td colspan="5">None yet.</td></tr>
+  {%- endfor %}
+</table>
+</section>
+{% endif %}
+</body>
+</html>

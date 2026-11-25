@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+/.local/
+/.wealthcontext/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+/data/
+triage-log.jsonl
+*.sqlite
+*.sqlite-*
+.DS_Store

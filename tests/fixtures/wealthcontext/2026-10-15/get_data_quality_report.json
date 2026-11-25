@@ -1,0 +1,750 @@
+{
+  "contract_version": "1.0",
+  "trace_id": "2fab9558c414fecfcac9710d4351aa9a",
+  "result_id": "r_aec0404916f347ccab4d67a3ef945e46",
+  "status": "INCOMPLETE",
+  "as_of": "2026-10-15",
+  "valuation_date": "2026-10-15",
+  "known_as_of": "2026-10-31T16:00:00Z",
+  "calculated_at": "2026-11-22T04:57:45.758310Z",
+  "entitlement_revision": 2,
+  "policy_revision": "sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299",
+  "data": {
+    "items": [
+      {
+        "household_id": "WC-HH-0001",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "PENDING_SETTLEMENT",
+              "severity": "info",
+              "subject": "WC-AC-0001:USD",
+              "detail": {
+                "pending_transaction_ids": [
+                  "WC-TXN-0081"
+                ]
+              }
+            },
+            {
+              "code": "PENDING_SETTLEMENT",
+              "severity": "info",
+              "subject": "WC-AC-0001:WC-SEC-0001",
+              "detail": {
+                "pending_transaction_ids": [
+                  "WC-TXN-0081"
+                ]
+              }
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0002",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 3,
+          "total_item_count": 3,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 2
+      },
+      {
+        "household_id": "WC-HH-0002",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0004",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            },
+            {
+              "code": "AMBIGUOUS_ENTITY",
+              "severity": "warning",
+              "subject": "WC-PER-0003",
+              "detail": {
+                "entity_type": "person"
+              }
+            }
+          ],
+          "item_count": 2,
+          "total_item_count": 2,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 2,
+        "warning_count": 2,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0003",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "PRICE_SOURCE_MISMATCH",
+              "severity": "info",
+              "subject": "WC-AC-0005:WC-SEC-0003",
+              "detail": {
+                "authority": "CUSTODY",
+                "reasons": [
+                  "CLOSE_DATE"
+                ],
+                "custody_price": "28",
+                "custody_currency": "USD",
+                "custody_price_date": "2026-10-09",
+                "pas_price": {
+                  "currency": "USD",
+                  "price": "28",
+                  "price_date": "2026-10-15"
+                }
+              }
+            },
+            {
+              "code": "PRICE_STALE",
+              "severity": "warning",
+              "subject": "WC-AC-0005:WC-SEC-0003",
+              "detail": {
+                "price_date": "2026-10-09",
+                "age_business_days": 4,
+                "tolerance_business_days": 0
+              }
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0006",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 3,
+          "total_item_count": 3,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 2,
+        "info_count": 1
+      },
+      {
+        "household_id": "WC-HH-0004",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0008",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0005",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "REPORTING_HOUSEHOLD_CONFLICT",
+              "severity": "warning",
+              "subject": "WC-AC-0009",
+              "detail": {
+                "authoritative_source": "CRM",
+                "household_id": "WC-HH-0005",
+                "counterpart_household_id": "[REDACTED]"
+              }
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0010",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 2,
+          "total_item_count": 2,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 2,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0006",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "OWNERSHIP_CONFLICT",
+              "severity": "warning",
+              "subject": "WC-AC-0011",
+              "detail": {
+                "reason": "CRM_CUSTODY_DISAGREEMENT",
+                "authoritative_source": "CUSTODY",
+                "fields": [
+                  "title",
+                  "registration",
+                  "owners"
+                ]
+              }
+            },
+            {
+              "code": "OWNERSHIP_CONFLICT",
+              "severity": "warning",
+              "subject": "WC-AC-0011",
+              "detail": {
+                "reason": "LEGAL_OWNER_NOT_CURRENT_MEMBER",
+                "legal_owner_ids": [
+                  "WC-PER-0012"
+                ],
+                "membership_source": "CRM",
+                "ownership_source": "CUSTODY"
+              }
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0012",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 3,
+          "total_item_count": 3,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 3,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0007",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0014",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0008",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0016",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0009",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0018",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0010",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0020",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0011",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0022",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0012",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "CLOSED_ACCOUNT_WITH_BALANCE",
+              "severity": "warning",
+              "subject": "WC-AC-0023",
+              "detail": {}
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0024",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 2,
+          "total_item_count": 2,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 2,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0013",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0026",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0030",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 2,
+          "total_item_count": 2,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 2,
+        "warning_count": 2,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0014",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0028",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            },
+            {
+              "code": "HELD_AWAY_EXCLUDED",
+              "severity": "info",
+              "subject": "WC-AC-0031",
+              "detail": {}
+            },
+            {
+              "code": "HELD_AWAY_EXCLUDED",
+              "severity": "info",
+              "subject": "WC-AC-0032",
+              "detail": {}
+            }
+          ],
+          "item_count": 3,
+          "total_item_count": 3,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 2
+      }
+    ],
+    "item_count": 14,
+    "total_item_count": 14,
+    "ordering": "household_id ASC",
+    "truncated": false,
+    "next_cursor": null,
+    "evaluated_household_count": 14,
+    "households_with_issues_count": 14,
+    "incomplete_household_count": 14,
+    "quality_flag_count": 26
+  },
+  "quality_flags": [
+    {
+      "code": "PENDING_SETTLEMENT",
+      "severity": "info",
+      "subject": "WC-AC-0001:USD",
+      "detail": {
+        "pending_transaction_ids": [
+          "WC-TXN-0081"
+        ]
+      }
+    },
+    {
+      "code": "PENDING_SETTLEMENT",
+      "severity": "info",
+      "subject": "WC-AC-0001:WC-SEC-0001",
+      "detail": {
+        "pending_transaction_ids": [
+          "WC-TXN-0081"
+        ]
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0002",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0004",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "PRICE_SOURCE_MISMATCH",
+      "severity": "info",
+      "subject": "WC-AC-0005:WC-SEC-0003",
+      "detail": {
+        "authority": "CUSTODY",
+        "reasons": [
+          "CLOSE_DATE"
+        ],
+        "custody_price": "28",
+        "custody_currency": "USD",
+        "custody_price_date": "2026-10-09",
+        "pas_price": {
+          "currency": "USD",
+          "price": "28",
+          "price_date": "2026-10-15"
+        }
+      }
+    },
+    {
+      "code": "PRICE_STALE",
+      "severity": "warning",
+      "subject": "WC-AC-0005:WC-SEC-0003",
+      "detail": {
+        "price_date": "2026-10-09",
+        "age_business_days": 4,
+        "tolerance_business_days": 0
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0006",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0008",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "REPORTING_HOUSEHOLD_CONFLICT",
+      "severity": "warning",
+      "subject": "WC-AC-0009",
+      "detail": {
+        "authoritative_source": "CRM",
+        "household_id": "WC-HH-0005",
+        "counterpart_household_id": "[REDACTED]"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0010",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "OWNERSHIP_CONFLICT",
+      "severity": "warning",
+      "subject": "WC-AC-0011",
+      "detail": {
+        "reason": "CRM_CUSTODY_DISAGREEMENT",
+        "authoritative_source": "CUSTODY",
+        "fields": [
+          "title",
+          "registration",
+          "owners"
+        ]
+      }
+    },
+    {
+      "code": "OWNERSHIP_CONFLICT",
+      "severity": "warning",
+      "subject": "WC-AC-0011",
+      "detail": {
+        "reason": "LEGAL_OWNER_NOT_CURRENT_MEMBER",
+        "legal_owner_ids": [
+          "WC-PER-0012"
+        ],
+        "membership_source": "CRM",
+        "ownership_source": "CUSTODY"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0012",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0014",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0016",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0018",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0020",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0022",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "CLOSED_ACCOUNT_WITH_BALANCE",
+      "severity": "warning",
+      "subject": "WC-AC-0023",
+      "detail": {}
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0024",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0026",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0028",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0030",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "HELD_AWAY_EXCLUDED",
+      "severity": "info",
+      "subject": "WC-AC-0031",
+      "detail": {}
+    },
+    {
+      "code": "HELD_AWAY_EXCLUDED",
+      "severity": "info",
+      "subject": "WC-AC-0032",
+      "detail": {}
+    },
+    {
+      "code": "AMBIGUOUS_ENTITY",
+      "severity": "warning",
+      "subject": "WC-PER-0003",
+      "detail": {
+        "entity_type": "person"
+      }
+    }
+  ],
+  "source_refs": [
+    "h_5a6db253767242068fc069abf02ba283"
+  ],
+  "metric_refs": [],
+  "error": null
+}

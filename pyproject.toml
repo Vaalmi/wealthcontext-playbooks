@@ -1,0 +1,85 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wealthcontext-playbooks"
+version = "0.1.0"
+description = "A governed knowledge factory above WealthContext"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.13,<3.14"
+dependencies = ["httpx2==2.16.2", "pyyaml==6.0.4"]
+
+[project.scripts]
+playbooks = "cli.main:main"
+
+# One group for each deployable, so each can be imported, and is shipped, with only its own.
+[dependency-groups]
+server = [
+  "fastapi==0.165.0",
+  "httpx2==2.16.2",
+  "jinja2==3.1.6",
+  "pyyaml==6.0.4",
+  "sqlalchemy==2.1.9",
+  "uvicorn==0.54.0",
+]
+agent = [
+  "fastapi==0.165.0",
+  "httpx2==2.16.2",
+  "langchain==1.5.2",
+  "langchain-anthropic==1.7.12",
+  "langchain-openai==1.8.5",
+  "langgraph==1.2.24",
+  "uvicorn==0.54.0",
+]
+dev = [
+  { include-group = "server" },
+  { include-group = "agent" },
+  "lefthook==2.2.2",
+  "playwright==1.65.2",
+  "pyright[nodejs]==1.1.414",
+  "pytest==9.2.0",
+  "pytest-cov==7.1.0",
+  "ruff==0.17.6",
+  "types-pyyaml==6.0.12.20261113",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["cli"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Path"]
+
+[tool.pyright]
+pythonVersion = "3.13"
+typeCheckingMode = "standard"
+include = ["backend", "triage_agent", "curator", "modelkit", "cli", "scripts", "tests", "api_rules.py"]
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+addopts = "-q --strict-markers"
+markers = ["browser: the browser test, run on its own by make check"]
+
+[tool.coverage.run]
+branch = true
+source = ["backend", "triage_agent", "curator", "modelkit", "cli"]
+concurrency = ["thread"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true

@@ -1,0 +1,418 @@
+{
+  "contract_version": "1.0",
+  "trace_id": "45f1b6a2958f6808d2a01e4796b29a6b",
+  "result_id": "r_efeca3dbfe654e5d980e645727b32e54",
+  "status": "COMPLETE",
+  "as_of": "2026-10-15",
+  "valuation_date": "2026-10-15",
+  "known_as_of": "2026-10-31T16:00:00Z",
+  "calculated_at": "2026-11-22T04:57:46.125659Z",
+  "entitlement_revision": 2,
+  "policy_revision": "sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299",
+  "data": {
+    "items": [
+      {
+        "id": "RUN-1c4676e9048bc40c0b613267bb96c18cf0f348229bef3ecc97bf742df964dea3",
+        "source_system": "PAS-A",
+        "feed": "pas_snapshots",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 36,
+        "rejected_records": 0,
+        "content_hash": "fbaedd43394d58c4183c3698903ab4e5b0221eb969a85ed15c62f4111584c763",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-25c0ede9cf0455c30edf6d8bff5a0c83aefb6b5f6e05d49d27415d51e2826492",
+        "source_system": "CUSTODY-A",
+        "feed": "prices",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 9,
+        "rejected_records": 0,
+        "content_hash": "5aa55a3fbe5e7e5e23189d717d8c6c8244960625d4895fecc7668dbf2135d755",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-29575c05dc0589c96536e7af840f0f5ad73e0b4f099e6f7a10408ab137611661",
+        "source_system": "CUSTODY-B",
+        "feed": "custody_snapshots",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 21,
+        "rejected_records": 0,
+        "content_hash": "fb4694227ab9884be16e687f8e227243c2c30abc92b69482aeee1c2eea988fd2",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-3c6f6a20248330749de8922a7c825ac2795a04ccb09a420dc37a12de3f4cfb13",
+        "source_system": "FX",
+        "feed": "fx",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 4,
+        "rejected_records": 0,
+        "content_hash": "c02a25e5049f211252bcaac404e092c699ecd6dbd3638a954376d6437715a47e",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-4376895c101f4d972fc88434a981d77b95444fab9efa4fcdb3efd9d6c95d4dc5",
+        "source_system": "SECMASTER",
+        "feed": "securities",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 20,
+        "rejected_records": 0,
+        "content_hash": "bb38f2c2961cbf4d1145a46c20b99754f5424a7d3e44db08d434c0e3b0d26450",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-683e1df22b1913cd6dcc2fccc2004e9f6a436b845ede20a5e924402489703bbf",
+        "source_system": "CUSTODY-B",
+        "feed": "custody_accounts",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 15,
+        "rejected_records": 0,
+        "content_hash": "778360e257f438d2ebdd9c09519abdbd4952a86781859d923b87d018078e70b8",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-69ad52c76269d0a68b5f85595a8fbee497918f2e86be62eb266444295d839557",
+        "source_system": "CUSTODY-A",
+        "feed": "custody_snapshots",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 36,
+        "rejected_records": 0,
+        "content_hash": "7f9db59189e56a859aaf667df5ff9e87946fec15b24eed7ca617f9ea3e5a07ca",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-6e2ec2ece45324fd94572e25481c9753de9e4dcf9eee60ae135598d0ce362b55",
+        "source_system": "CUSTODY-B",
+        "feed": "prices",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 10,
+        "rejected_records": 0,
+        "content_hash": "4db5d472b5f1e7b4953b457ed5849eef20c8c14f98ecd417ee67b3cf95e96254",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-79af5c0b88556defcec7c3ca4c794abad172bc8b59ca16fb05e05cc7780636a7",
+        "source_system": "PAS-A",
+        "feed": "lots",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 6,
+        "rejected_records": 0,
+        "content_hash": "2d6b13f8cbdb2335e498806d764f7dfbc39e82b997f547192a8de3ff5f281d8f",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-7f5081291c7720342df7b6463016f722abec44694a37a02037a9494ca533d492",
+        "source_system": "PAS-A",
+        "feed": "transactions",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 1,
+        "rejected_records": 0,
+        "content_hash": "572e00abf9bffa8633e5186269b39533224ecc00e2f2d2fa1bb6079eaa41b988",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-b1209591b11c902430190fef083306949c6075bf1ab052fbb2a0aef25cdbbb5d",
+        "source_system": "CRM",
+        "feed": "crm",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 174,
+        "rejected_records": 0,
+        "content_hash": "56892ee540878b4aa639fc93a689aa6e959312172241dc0a4cad9723e829500b",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-d8989cb7d1debf2a3d6e47ab8d173a48d260c8d1d3d6ba62225b7899818cd0c8",
+        "source_system": "PAS-B",
+        "feed": "lots",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 0,
+        "rejected_records": 0,
+        "content_hash": "a9e2f32ae6ac7f7e0e9c52ea32bfb80b5d66b4e844f58cd8aba6b914e3325dfc",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-d9ad3d2db599ee6cdd83338553ec9ee69c422a070ec7f3985e9aba863c4f9c74",
+        "source_system": "CUSTODY-A",
+        "feed": "custody_accounts",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 16,
+        "rejected_records": 0,
+        "content_hash": "e71867882ec69420930cd37e6f8e8fb25dfda287af73b0130e352d900ed45404",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e",
+        "source_system": "PAS-B",
+        "feed": "pas_snapshots",
+        "business_date": "2026-10-15",
+        "status": "FAILED",
+        "upstream_status": "FAILED",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 0,
+        "rejected_records": 15,
+        "content_hash": null,
+        "rejects": {
+          "items": [
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:1",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:10",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:11",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:12",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:13",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:14",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:15",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:2",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:3",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:4",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:5",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:6",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:7",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:8",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            },
+            {
+              "id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e:9",
+              "reason": "ACCOUNT_MANIFEST_MISMATCH",
+              "raw_payload": "[REDACTED]"
+            }
+          ],
+          "item_count": 15,
+          "total_item_count": 15,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      },
+      {
+        "id": "RUN-f5ca804e87768f9bbdc37627f38d5c20e02958d5f5edc55e17f83d01512614af",
+        "source_system": "PAS-B",
+        "feed": "transactions",
+        "business_date": "2026-10-15",
+        "status": "SUCCESS",
+        "upstream_status": "SUCCESS",
+        "recorded_at": "2026-10-15T22:00:00Z",
+        "imported_at": "2026-11-22T04:57:09.971288Z",
+        "accepted_records": 0,
+        "rejected_records": 0,
+        "content_hash": "91cfc4122894cfa97ad3059828ef774ff62acdea5e0c0a3fda75eaca485bd3d0",
+        "rejects": {
+          "items": [],
+          "item_count": 0,
+          "total_item_count": 0,
+          "ordering": "id ASC",
+          "truncated": false,
+          "next_cursor": null
+        }
+      }
+    ],
+    "item_count": 15,
+    "total_item_count": 15,
+    "ordering": "recorded_at DESC, id ASC",
+    "truncated": false,
+    "next_cursor": null
+  },
+  "quality_flags": [],
+  "source_refs": [
+    "h_eb8d2fde0c1a451180021c82ccdd6f5a"
+  ],
+  "metric_refs": [],
+  "error": null
+}

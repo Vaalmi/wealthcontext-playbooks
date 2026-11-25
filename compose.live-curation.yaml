@@ -1,0 +1,8 @@
+# Laid over compose.yaml for a live curation only: the curator's way out to the model's provider.
+# Triage stays scripted there, so the triage agent has none.
+services:
+  curator:
+    networks: [curation, provider]
+
+networks:
+  provider: {}

@@ -1,0 +1,228 @@
+{
+  "origin": "scripted",
+  "about": "Written for this repository, not captured from a model: no model has been given these requests. The triage agent's replies for the evidence scenario of a pattern across gap reports: 2026-10-12, 2026-10-13 and 2026-10-14 each hold two stale prices and five other warnings that no playbook covers. Each stale price is answered with a gap report, two to a day, in the order asked, and each other warning with none. They are the scenario's input: the curator's answer to them is what the scenario measures.",
+  "replies": [
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "A stale price arrived with no playbook step for it. The analyst told the Pricing Desk and held the advisor's report until a fresh price came in."
+          }
+        }
+      ]
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "A stale price arrived with no playbook step for it. The analyst told the Pricing Desk and held the advisor's report until a fresh price came in."
+          }
+        }
+      ]
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "Stale prices again, and still no step. The Pricing Desk was told that morning, and the advisor's report waited for the fresh price."
+          }
+        }
+      ]
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "Stale prices again, and still no step. The Pricing Desk was told that morning, and the advisor's report waited for the fresh price."
+          }
+        }
+      ]
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "A third day of stale prices with no step. Each time the Pricing Desk was asked for a fresh price before the end of the day, and the report was held until it landed."
+          }
+        }
+      ]
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "A third day of stale prices with no step. Each time the Pricing Desk was asked for a fresh price before the end of the day, and the report was held until it landed."
+          }
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_gap_report",
+          "args": {}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "contract_version": "1.0",
+  "trace_id": "c59587255aac5a7db0cdd55e52d23738",
+  "result_id": "r_b24a527d58e149b28d096057cebae98c",
+  "status": "COMPLETE",
+  "as_of": "2026-10-15",
+  "valuation_date": "2026-10-15",
+  "known_as_of": "2026-10-31T16:00:00Z",
+  "calculated_at": "2026-11-22T04:57:46.452642Z",
+  "entitlement_revision": 2,
+  "policy_revision": "sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299",
+  "data": {
+    "run_id": "RUN-ed280f1c185c9b976ffbb31ac569cb51d8bbadf47b7f3ceab0f3587adde8f06e",
+    "source_system": "PAS-B",
+    "feed": "pas_snapshots",
+    "business_date": "2026-10-15",
+    "status": "FAILED",
+    "upstream_status": "FAILED",
+    "recorded_at": "2026-10-15T22:00:00Z",
+    "file_received": false,
+    "accepted_records": 0,
+    "rejected_records": 15,
+    "account_attribution": "MANIFEST",
+    "expected_account_count": 15,
+    "committed_account_count": 0,
+    "affected_account_count": 15,
+    "affected_household_count": 14,
+    "unattributed_account_count": 0,
+    "affected_accounts": {
+      "items": [
+        {
+          "account_id": "WC-AC-0002",
+          "manifest_account_id": "WC-AC-0002",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0001",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0004",
+          "manifest_account_id": "WC-AC-0004",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0002",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0006",
+          "manifest_account_id": "WC-AC-0006",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0003",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0008",
+          "manifest_account_id": "WC-AC-0008",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0004",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0010",
+          "manifest_account_id": "WC-AC-0010",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0005",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0012",
+          "manifest_account_id": "WC-AC-0012",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0006",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0014",
+          "manifest_account_id": "WC-AC-0014",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0007",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0016",
+          "manifest_account_id": "WC-AC-0016",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0008",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0018",
+          "manifest_account_id": "WC-AC-0018",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0009",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0020",
+          "manifest_account_id": "WC-AC-0020",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0010",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0022",
+          "manifest_account_id": "WC-AC-0022",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0011",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0024",
+          "manifest_account_id": "WC-AC-0024",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0012",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0026",
+          "manifest_account_id": "WC-AC-0026",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0013",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0028",
+          "manifest_account_id": "WC-AC-0028",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0014",
+          "household_attribution": "RESOLVED"
+        },
+        {
+          "account_id": "WC-AC-0030",
+          "manifest_account_id": "WC-AC-0030",
+          "reason": "ACCOUNT_MANIFEST_MISMATCH",
+          "household_id": "WC-HH-0013",
+          "household_attribution": "RESOLVED"
+        }
+      ],
+      "item_count": 15,
+      "total_item_count": 15,
+      "ordering": "account_id ASC (unresolved last), manifest_account_id ASC",
+      "truncated": false,
+      "next_cursor": null
+    },
+    "affected_households": {
+      "items": [
+        {
+          "household_id": "WC-HH-0001"
+        },
+        {
+          "household_id": "WC-HH-0002"
+        },
+        {
+          "household_id": "WC-HH-0003"
+        },
+        {
+          "household_id": "WC-HH-0004"
+        },
+        {
+          "household_id": "WC-HH-0005"
+        },
+        {
+          "household_id": "WC-HH-0006"
+        },
+        {
+          "household_id": "WC-HH-0007"
+        },
+        {
+          "household_id": "WC-HH-0008"
+        },
+        {
+          "household_id": "WC-HH-0009"
+        },
+        {
+          "household_id": "WC-HH-0010"
+        },
+        {
+          "household_id": "WC-HH-0011"
+        },
+        {
+          "household_id": "WC-HH-0012"
+        },
+        {
+          "household_id": "WC-HH-0013"
+        },
+        {
+          "household_id": "WC-HH-0014"
+        }
+      ],
+      "item_count": 14,
+      "total_item_count": 14,
+      "ordering": "household_id ASC",
+      "truncated": false,
+      "next_cursor": null
+    }
+  },
+  "quality_flags": [],
+  "source_refs": [
+    "h_1d71b3412f5142b68e549853a0086d5b"
+  ],
+  "metric_refs": [],
+  "error": null
+}

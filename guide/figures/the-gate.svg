@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 1028 378" width="1028" height="378" role="img" aria-label="The gate. A proposal goes through six checks: support, personal data, guardrails, base, overlap and the held-out cases, and every result is recorded. If all pass, the playbook owner approves by hash, ruling for a source where sources disagree, and the new version goes into use. If any check fails the proposal is refused and the playbooks are unchanged. If the playbooks changed since the gate ran, the proposal goes stale and its gap reports are open again.">
+<title>The gate. A proposal goes through six checks: support, personal data, guardrails, base, overlap and the held-out cases, and every result is recorded. If all pass, the playbook owner approves by hash, ruling for a source where sources disagree, and the new version goes into use. If any check fails the proposal is refused and the playbooks are unchanged. If the playbooks changed since the gate ran, the proposal goes stale and its gap reports are open again.</title>
+<style>text{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif}.panel{fill:#FBFCFB;stroke:#CDD3D6}.tt{font-size:13px;font-weight:600;fill:#18202B}.tt14{font-size:14px;font-weight:600;fill:#18202B}.ts{font-size:11.5px;fill:#566070}.lbl{font-size:11px;fill:#566070}.zl{font-size:10.5px;letter-spacing:.08em;font-weight:600;fill:#566070}.chipt{font-size:11.5px;font-weight:600}.stepn{font-size:19px;font-weight:600;fill:#18202B}.lbg{fill:#FBFCFB}.zone{fill:#F4F6F5;stroke:#CDD3D6;stroke-dasharray:5 4}.box{fill:#FFFFFF;stroke:#7B8592;stroke-width:1.1}.box.muted{fill:#E9ECEB;stroke:#CDD3D6}.box.ghost{fill:none;stroke:#7B8592;stroke-dasharray:6 4}.step{fill:#FFFFFF;stroke:#7B8592;stroke-width:2}.edge{fill:none;stroke:#46505E;stroke-width:1.4}.edge.dash{stroke-dasharray:5 4}.head{fill:#46505E}.person{fill:#7B8592}.accentt{fill:#2756A6}.box.accent,.step.accent{fill:#E2EAF7;stroke:#2756A6}.edge.accent{stroke:#2756A6}.head.accent{fill:#2756A6}.okt{fill:#1F7A4D}.box.ok,.step.ok{fill:#DFF1E7;stroke:#1F7A4D}.edge.ok{stroke:#1F7A4D}.head.ok{fill:#1F7A4D}.warnt{fill:#9C5B0E}.box.warn,.step.warn{fill:#FAEBD5;stroke:#9C5B0E}.edge.warn{stroke:#9C5B0E}.head.warn{fill:#9C5B0E}.denyt{fill:#B02A22}.box.deny,.step.deny{fill:#F8E1DF;stroke:#B02A22}.edge.deny{stroke:#B02A22}.head.deny{fill:#B02A22}</style>
+<defs><marker id="head-base" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head base" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head accent" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head ok" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-warn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head warn" d="M0 0 L10 5 L0 10 z"/></marker><marker id="head-deny" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head deny" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+<rect class="panel" x="-13.5" y="-13.5" width="1027" height="377" rx="10"/>
+<rect class="zone" x="200" y="20" width="495" height="240" rx="12"/>
+<text class="zl" x="214" y="40">THE GATE · SIX CHECKS, EVERY RESULT RECORDED</text>
+<path class="edge" d="M 170 140 L 200 140" marker-end="url(#head-base)"/>
+<path class="edge accent" d="M 695 140 L 725 140" marker-end="url(#head-accent)"/>
+<path class="edge ok" d="M 875 140 L 895 140" marker-end="url(#head-ok)"/>
+<path class="edge deny" d="M 440 260 L 440 292" marker-end="url(#head-deny)"/>
+<path class="edge warn" d="M 800 182 L 800 240" marker-end="url(#head-warn)"/>
+<rect class="box" x="20" y="108" width="150" height="64" rx="7"/>
+<rect class="box accent" x="215" y="52" width="150" height="86" rx="7"/>
+<rect class="box accent" x="372" y="52" width="150" height="86" rx="7"/>
+<rect class="box accent" x="529" y="52" width="150" height="86" rx="7"/>
+<rect class="box accent" x="215" y="152" width="150" height="86" rx="7"/>
+<rect class="box accent" x="372" y="152" width="150" height="86" rx="7"/>
+<rect class="box accent" x="529" y="152" width="150" height="86" rx="7"/>
+<rect class="box accent" x="725" y="98" width="150" height="84" rx="7"/>
+<rect class="box ok" x="895" y="105" width="85" height="70" rx="7"/>
+<rect class="box deny" x="240" y="292" width="400" height="44" rx="7"/>
+<rect class="box warn" x="700" y="240" width="280" height="96" rx="7"/>
+<text class="tt" x="95" y="129.5" text-anchor="middle">Proposal</text>
+<text class="ts" x="95" y="145.5" text-anchor="middle">changed steps, each</text>
+<text class="ts" x="95" y="160.5" text-anchor="middle">with what it rests on</text>
+<text class="tt accentt" x="290" y="84.5" text-anchor="middle">Support</text>
+<text class="ts" x="290" y="100.5" text-anchor="middle">each change rests on</text>
+<text class="ts" x="290" y="115.5" text-anchor="middle">what its bundle holds</text>
+<text class="tt accentt" x="447" y="84.5" text-anchor="middle">Personal data</text>
+<text class="ts" x="447" y="100.5" text-anchor="middle">no personal data and</text>
+<text class="ts" x="447" y="115.5" text-anchor="middle">no client identifier</text>
+<text class="tt accentt" x="604" y="84.5" text-anchor="middle">Guardrails</text>
+<text class="ts" x="604" y="100.5" text-anchor="middle">no forbidden wording,</text>
+<text class="ts" x="604" y="115.5" text-anchor="middle">figure or unlisted desk</text>
+<text class="tt accentt" x="290" y="184.5" text-anchor="middle">Base</text>
+<text class="ts" x="290" y="200.5" text-anchor="middle">made against the</text>
+<text class="ts" x="290" y="215.5" text-anchor="middle">versions in use</text>
+<text class="tt accentt" x="447" y="184.5" text-anchor="middle">Overlap</text>
+<text class="ts" x="447" y="200.5" text-anchor="middle">no two steps fit</text>
+<text class="ts" x="447" y="215.5" text-anchor="middle">the same exception</text>
+<text class="tt accentt" x="604" y="184.5" text-anchor="middle">Held-out cases</text>
+<text class="ts" x="604" y="200.5" text-anchor="middle">eight cases by rule,</text>
+<text class="ts" x="604" y="215.5" text-anchor="middle">then three trials each</text>
+<text class="tt accentt" x="800" y="122" text-anchor="middle">Playbook owner</text>
+<text class="ts" x="800" y="138" text-anchor="middle">approves by hash, and</text>
+<text class="ts" x="800" y="153" text-anchor="middle">rules for a source</text>
+<text class="ts" x="800" y="168" text-anchor="middle">where sources disagree</text>
+<text class="tt okt" x="937.5" y="137" text-anchor="middle">In use</text>
+<text class="ts" x="937.5" y="153" text-anchor="middle">new version</text>
+<rect class="lbg" x="692.8" y="110" width="34.4" height="16" rx="3"/>
+<text class="lbl accentt" x="710" y="122" text-anchor="middle">pass</text>
+<text class="tt denyt" x="440" y="318.5" text-anchor="middle">Any check fails: refused, playbooks unchanged</text>
+<text class="tt warnt" x="840" y="270" text-anchor="middle">Stale</text>
+<text class="ts" x="840" y="286" text-anchor="middle">if the playbooks changed since the gate</text>
+<text class="ts" x="840" y="301" text-anchor="middle">ran, the proposal goes stale and its</text>
+<text class="ts" x="840" y="316" text-anchor="middle">gap reports are open again</text>
+</svg>

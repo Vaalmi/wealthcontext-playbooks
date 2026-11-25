@@ -1,0 +1,248 @@
+{
+  "contract_version": "1.0",
+  "trace_id": "98f54bafb54296adabe08ddb4718b02a",
+  "result_id": "r_a2f2bbac1b8b0a4870bf28fb4870d9d3",
+  "status": "INCOMPLETE",
+  "as_of": "2026-10-20",
+  "valuation_date": "2026-10-20",
+  "known_as_of": "2026-10-31T16:00:00Z",
+  "calculated_at": "2026-10-31T16:00:00Z",
+  "entitlement_revision": 2,
+  "policy_revision": "sha256:d59e444949411edf29cdfd6eb5a6dd599c5c37920fbe8709476871079678b299",
+  "data": {
+    "items": [
+      {
+        "household_id": "WC-HH-0001",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "OWNERSHIP_CONFLICT",
+              "severity": "warning",
+              "subject": "WC-AC-0002",
+              "detail": {
+                "reason": "CRM_CUSTODY_DISAGREEMENT",
+                "authoritative_source": "CUSTODY",
+                "fields": [
+                  "title"
+                ]
+              }
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0002",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 2,
+          "total_item_count": 2,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 2,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0002",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "RECONCILIATION_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0004",
+              "detail": {
+                "source": "CUSTODY",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            },
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0004",
+              "detail": {
+                "source": "PAS",
+                "reason": "ACCOUNT_MANIFEST_MISMATCH"
+              }
+            }
+          ],
+          "item_count": 2,
+          "total_item_count": 2,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 2,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0003",
+        "complete": false,
+        "flags": {
+          "items": [
+            {
+              "code": "SOURCE_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0006",
+              "detail": {
+                "source": "CRM",
+                "entity_type": "account"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 1,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0004",
+        "complete": true,
+        "flags": {
+          "items": [
+            {
+              "code": "RECONCILIATION_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0008",
+              "detail": {
+                "source": "CUSTODY",
+                "components": [
+                  "[REDACTED]",
+                  "[REDACTED]"
+                ]
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 0,
+        "warning_count": 1,
+        "info_count": 0
+      },
+      {
+        "household_id": "WC-HH-0005",
+        "complete": true,
+        "flags": {
+          "items": [
+            {
+              "code": "RECONCILIATION_UNAVAILABLE",
+              "severity": "warning",
+              "subject": "WC-AC-0010",
+              "detail": {
+                "reason": "AMBIGUOUS_TRANSACTIONS"
+              }
+            }
+          ],
+          "item_count": 1,
+          "total_item_count": 1,
+          "ordering": "subject ASC, code ASC, detail ASC",
+          "truncated": false,
+          "next_cursor": null
+        },
+        "missing_component_count": 0,
+        "warning_count": 1,
+        "info_count": 0
+      }
+    ],
+    "item_count": 5,
+    "total_item_count": 5,
+    "ordering": "household_id ASC",
+    "truncated": false,
+    "next_cursor": null,
+    "evaluated_household_count": 5,
+    "households_with_issues_count": 5,
+    "incomplete_household_count": 3,
+    "quality_flag_count": 7
+  },
+  "quality_flags": [
+    {
+      "code": "OWNERSHIP_CONFLICT",
+      "severity": "warning",
+      "subject": "WC-AC-0002",
+      "detail": {
+        "reason": "CRM_CUSTODY_DISAGREEMENT",
+        "authoritative_source": "CUSTODY",
+        "fields": [
+          "title"
+        ]
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0002",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "RECONCILIATION_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0004",
+      "detail": {
+        "source": "CUSTODY",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0004",
+      "detail": {
+        "source": "PAS",
+        "reason": "ACCOUNT_MANIFEST_MISMATCH"
+      }
+    },
+    {
+      "code": "SOURCE_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0006",
+      "detail": {
+        "source": "CRM",
+        "entity_type": "account"
+      }
+    },
+    {
+      "code": "RECONCILIATION_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0008",
+      "detail": {
+        "source": "CUSTODY",
+        "components": [
+          "[REDACTED]",
+          "[REDACTED]"
+        ]
+      }
+    },
+    {
+      "code": "RECONCILIATION_UNAVAILABLE",
+      "severity": "warning",
+      "subject": "WC-AC-0010",
+      "detail": {
+        "reason": "AMBIGUOUS_TRANSACTIONS"
+      }
+    }
+  ],
+  "source_refs": [
+    "h_5a04ce7249a244dd42c3603001847210"
+  ],
+  "metric_refs": [],
+  "error": null
+}

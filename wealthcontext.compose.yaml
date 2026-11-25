@@ -1,0 +1,11 @@
+# Laid over WealthContext's own compose file, from outside its checkout, so that
+# the pinned copy shares no image tag, port or volume with another WealthContext
+# on the same machine. `scripts/cycle.py` starts it under a project name of its own.
+services:
+  app:
+    image: wcplaybooks-wealthcontext-app:local
+    ports: !reset []
+  test:
+    image: wcplaybooks-wealthcontext-app:local
+  mcp:
+    image: wcplaybooks-wealthcontext-app:local

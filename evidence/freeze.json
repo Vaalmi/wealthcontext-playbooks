@@ -1,0 +1,31 @@
+{
+  "about": "The hashes every evidence run rests on, but the models: the curator's instructions and tools, every firm source, the held-out case set (as the gate hashes it), the founding playbooks and desks, and the scenarios with their scripted triage replies. Written before the first run. No run starts unless every hash still holds.",
+  "sha256": "48b93fc77b3e0c63a78a9377397542e86cdd5f978e7e769bd7271ff505fadbcc",
+  "curator": {
+    "instructions": "7e03f63816719cbfa8e74728e9b0fe30c228e0c37b2fd10e93c66fa93534e2ac",
+    "curator/harness.py": "1af9c8b50ddeabe53dc26ef2d4ac1639c8b884791cf07bb9888f74273b4688f5",
+    "curator/tools.py": "430d492f567eb6c79fc347bce30986528a50cf2b1e01728cec51be34608afdbf"
+  },
+  "sources": {
+    "sources/corrections/cross-check-alone-is-no-hold.yaml": "46cdd0fed2c1e7fe33ca230158a6cb4177de404b37653df1ce356a17a6bcd55a",
+    "sources/memos/agent-instructions.md": "ff89173c4aacde027a89741ed1e613ef2a7158671938174bb4da4d9f9cb1fd1c",
+    "sources/memos/custodian-b-feed-escalation.md": "1f3ed15ffe649620fa38f94113a6997e6e10028527f8dfdbc25361afea1a96d7",
+    "sources/memos/custodian-b-service-desk-hours.md": "0ad9660723ca10d101f88474245f582897fd90dea5cf41df30e4a74131e7b8b0",
+    "sources/memos/custody-meeting-notice.md": "627e37e32ac6a656d0145d8e348177d618d9d84fc954241758911fbcfd5941ad",
+    "sources/memos/feed-outage-founding.md": "0792c022ce847d99b625d1eb35a5dcc2789f5e4b0c7aeded717ae968f832d425",
+    "sources/memos/missing-cross-check-founding.md": "16513ee21c32368d39a0aef5bcc42de4061895d2b71a73b52ee6ab970c44b297",
+    "sources/memos/stale-price-poisoned.md": "848283f7a0fe772c2212d3cedc8de5db4b28fa09a0f798de64ec0c99a64ee853"
+  },
+  "case_set": "3509ff1e2454f69c9a645cd67af1d4795ba0bb18144d8ec67eea5f4f3213e423",
+  "playbooks": {
+    "playbooks/desks.yaml": "b451d0c1e295369a8f29974fe732e586ee29d4a8b6f87ca9d8287b054f605dd8",
+    "playbooks/feed-outage/1.yaml": "aafe87d367a97007100c9a2199a9cf8d31b3b8ef1de27aa62ddf178923fc0e40",
+    "playbooks/ledger.jsonl": "18cf76c60646cc348e364afdc09e44d385f78a8f76b0664298867c21f463f397",
+    "playbooks/missing-cross-check/1.yaml": "151c4fdba5859054f302cfdb2df553d4e5a05198335ea1ba1d79cd5fc7ceec9d"
+  },
+  "scenarios": {
+    "evidence/scenarios.yaml": "aeca58522879a61e376ef92038480b9ad1563371e451cecd511c2383edc307fe",
+    "recordings/evidence-pattern-triage.json": "b8ba60312d1c19cff726f41398c4209edf31e4e64c386ef8b46eab485afa73ea",
+    "recordings/scripted-triage.json": "861b4fcd950efa678085a2177575785e6d0f24d6755d19ed983680f5d9789264"
+  }
+}

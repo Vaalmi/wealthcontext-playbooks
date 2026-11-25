@@ -1,0 +1,14 @@
+# Only what an image needs. Everything else stays out of the build context.
+*
+!pyproject.toml
+!uv.lock
+!backend
+!triage_agent
+!curator
+!cases
+!modelkit
+!playbooks
+!recordings
+!sources
+**/__pycache__
+**/*.pyc

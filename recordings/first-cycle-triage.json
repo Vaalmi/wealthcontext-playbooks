@@ -1,0 +1,768 @@
+{
+  "origin": "recorded",
+  "about": "Captured from openai:gpt-6-luna on 2026-11-24: each reply that model gave, in order, under the hash of the request it answered.",
+  "replies": [
+    {
+      "request": "4f659ad59fa97652594d680f41506a3921194a8a51f9c57ba95ed74517cf9319",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbook set lacks a written rule for handling stale-price warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a rule for triaging REPORTING_HOUSEHOLD_CONFLICT warnings, including how to assess and resolve conflicting household reporting relationships."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a rule for triaging OWNERSHIP_CONFLICT warnings when no approved step applies."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for triaging ownership-conflict warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for handling warnings that identify closed accounts with remaining balances."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbook lacks a rule for triaging AMBIGUOUS_ENTITY warnings, including how to address cases where a person cannot be reliably matched to an entity."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "4e6f7132ba269b6258898d615935968e2bca63500590d15fa9ac920630601b32",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for triaging reporting household conflicts."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack an approved rule for triaging ownership-conflict warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbook lacks a documented rule for handling ownership-conflict warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a standard rule for handling warnings that a closed account has a balance."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack an approved triage rule for AMBIGUOUS_ENTITY warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "07b0cd6cc113eeab4e96ed0f438aab8bd5459cd7d4ec60f51552d6f77ab83e9a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbook should not treat an unavailable custody cross-check by itself as grounds to hold an advisor report."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "20c8789ef8fb46c31b4bdc9022ab5564fd9658683be4e635f7725f78c0ff015e",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "20c8789ef8fb46c31b4bdc9022ab5564fd9658683be4e635f7725f78c0ff015e",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "20c8789ef8fb46c31b4bdc9022ab5564fd9658683be4e635f7725f78c0ff015e",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "d2b7722dc40842051e72926662bde629c05fa92d7893e28f7e3f95f3419daf2c",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "d2b7722dc40842051e72926662bde629c05fa92d7893e28f7e3f95f3419daf2c",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "d2b7722dc40842051e72926662bde629c05fa92d7893e28f7e3f95f3419daf2c",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "f32e511c5463e8bf583d274c394cd01615fe39cfb2bca5933db13f47260b99a1",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "94e69393dafbba267f0dec93c72833756c2bc20f5265e953813731afb51200c9",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "f32e511c5463e8bf583d274c394cd01615fe39cfb2bca5933db13f47260b99a1",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "94e69393dafbba267f0dec93c72833756c2bc20f5265e953813731afb51200c9",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "f32e511c5463e8bf583d274c394cd01615fe39cfb2bca5933db13f47260b99a1",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "94e69393dafbba267f0dec93c72833756c2bc20f5265e953813731afb51200c9",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "no_step_applies",
+          "args": {}
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "21c90729e8123da24982ec4356b1b38815f7e8ddf3d9396462251574ea3536db",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "707a0774896eefd969ee1e673f555578a2fc0b2745a33123129e38fe6b429243",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "6eaae6d6a7eaf0f5566c8b8656c86b0c94ca77e61d692088335fee6645c2ecdc",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/custodian-b-portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "21c90729e8123da24982ec4356b1b38815f7e8ddf3d9396462251574ea3536db",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "707a0774896eefd969ee1e673f555578a2fc0b2745a33123129e38fe6b429243",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "6eaae6d6a7eaf0f5566c8b8656c86b0c94ca77e61d692088335fee6645c2ecdc",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/custodian-b-portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "21c90729e8123da24982ec4356b1b38815f7e8ddf3d9396462251574ea3536db",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "707a0774896eefd969ee1e673f555578a2fc0b2745a33123129e38fe6b429243",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "6eaae6d6a7eaf0f5566c8b8656c86b0c94ca77e61d692088335fee6645c2ecdc",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/custodian-b-portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "21c90729e8123da24982ec4356b1b38815f7e8ddf3d9396462251574ea3536db",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "c0df5a6c77bd19d2ef540e2af1e8c37e4fbe2b7e8ee9ab8fd9cb995480ea696e",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "21c90729e8123da24982ec4356b1b38815f7e8ddf3d9396462251574ea3536db",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "c0df5a6c77bd19d2ef540e2af1e8c37e4fbe2b7e8ee9ab8fd9cb995480ea696e",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "21c90729e8123da24982ec4356b1b38815f7e8ddf3d9396462251574ea3536db",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "c0df5a6c77bd19d2ef540e2af1e8c37e4fbe2b7e8ee9ab8fd9cb995480ea696e",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "4e6f7132ba269b6258898d615935968e2bca63500590d15fa9ac920630601b32",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "4e6f7132ba269b6258898d615935968e2bca63500590d15fa9ac920630601b32",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "4e6f7132ba269b6258898d615935968e2bca63500590d15fa9ac920630601b32",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "97deaaccd9a36ec9df2dac36523e000c7580bfff59ad4f731ee1476d80a4e272",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/custodian-b-portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "97deaaccd9a36ec9df2dac36523e000c7580bfff59ad4f731ee1476d80a4e272",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/custodian-b-portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "97deaaccd9a36ec9df2dac36523e000c7580bfff59ad4f731ee1476d80a4e272",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/custodian-b-portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "811c125e0f8bda40445aa866df29239b29da8c9877917f426bd3d1e520c7e4f6",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "feed-outage/custodian-b-portfolio-feed-failed"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "590afeb36d0b76422b8d7ae0455e437f304fe0d0d03b25d98cdc24a045659301",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for triaging stale-price warnings and determining when they require further review."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a rule for triaging reporting-household conflicts."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written triage rule for ownership-conflict warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for triaging ownership-conflict warnings and determining their appropriate disposition."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for triaging closed-account-with-balance warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for triaging AMBIGUOUS_ENTITY warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "4e6f7132ba269b6258898d615935968e2bca63500590d15fa9ac920630601b32",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "choose_step",
+          "args": {
+            "option": "missing-cross-check/custody-cross-check-missing"
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "32500af2cd0cba75d4959f34e885c93e6fbd60aa44b57a3f569fb750b71effbf",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a rule for triaging and resolving conflicts in household reporting assignments."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a written rule for handling ownership-conflict warnings and assessing conflicting ownership information."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "325d896631b70ca0d9aa12a80ae7a088e5054d027b29aedc83b20ec90928c741",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a rule for triaging ownership-conflict warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "3d822078fdb9f5b1f5ca78f13f6e5d67587d2c2015887bb7060b960f91be641a",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbooks lack a rule for handling closed accounts that still show a balance."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    },
+    {
+      "request": "dfef82ab8b7a892409a4448b466c906c45500d35999c6856e99ff58a900741e3",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "file_gap_report",
+          "args": {
+            "summary": "The playbook lacks a written triage rule for ambiguous-entity warnings."
+          }
+        }
+      ],
+      "invalid_tool_calls": []
+    }
+  ]
+}
