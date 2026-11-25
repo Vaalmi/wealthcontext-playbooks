@@ -93,9 +93,12 @@ def test_a_lost_response_is_sent_again_and_changes_nothing_twice(make_layer, mon
     lost = []
 
     def losing(self, method, url, **options):
-        response = send(self, method, url, **options)
-        if str(url).endswith(move) and not lost:
+        # Marked before it is sent: the run can end as soon as the backend has the move.
+        first = str(url).endswith(move) and not lost
+        if first:
             lost.append(url)
+        response = send(self, method, url, **options)
+        if first:
             raise httpx2.ReadError("the answer was lost")
         return response
 
