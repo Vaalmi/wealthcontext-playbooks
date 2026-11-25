@@ -938,17 +938,27 @@ def test_a_gate_run_on_unapproved_playbooks_gives_out_no_action(make_layer, tmp_
 # What is kept when a gate's trials are cut short
 
 
-def test_a_trials_end_is_in_the_ledger_before_the_agent_is_told(make_layer):
-    seen = []
+def test_a_trials_end_is_in_the_ledger_before_the_agent_is_told(make_layer, monkeypatch):
+    ending, answered = [], []
     holder = {}
+    complete = trials.Trials.complete
 
-    def recorded_by_then(asked: dict) -> None:
+    def kept() -> list[tuple[str, int]]:
         lines = (holder["layer"].settings.playbooks / "ledger.jsonl").read_text().splitlines()
-        trials = [json.loads(line) for line in lines if '"held_out_trial"' in line]
-        seen.append(len(trials))
+        ended = [json.loads(line)["data"]["trial"] for line in lines if '"held_out_trial"' in line]
+        return [(trial["case"], trial["trial"]) for trial in ended]
 
+    def completing(self, run_id: str, attempt: int):
+        trial = self._trials[run_id]
+        ending.append(run_id)
+        answer = complete(self, run_id, attempt)
+        # Still in the backend: the agent has not been answered yet.
+        answered.append((trial.case, trial.number) in kept())
+        return answer
+
+    monkeypatch.setattr(trials.Trials, "complete", completing)
     layer = make_layer(
-        agent=lambda url, key: stand_ins.trial_agent(url, key, after=recorded_by_then),
+        agent=stand_ins.trial_agent,
         curates=lambda: [call("submit_proposal", **gating.honest())],
     )
     holder["layer"] = layer
@@ -956,10 +966,13 @@ def test_a_trials_end_is_in_the_ledger_before_the_agent_is_told(make_layer):
 
     gating.gated(layer, drafted(layer)["id"])
 
-    # Each trial the agent played was a line by the time its end was answered.
-    played = [n for n in seen]
-    assert played and all(count >= 1 for count in played)
-    assert played == sorted(played) and len(set(played)) == len(played)
+    # The gate can end while the last trial's answer is still on its way: wait for each.
+    until = time.monotonic() + 15
+    while len(answered) < len(ending):
+        assert time.monotonic() < until, "a trial's end was not answered"
+        time.sleep(0.02)
+    # Each trial the agent played was a line of its own before its end was answered.
+    assert answered and all(answered)
 
 
 def test_a_miss_fails_the_gate_whatever_then_stops_the_trials(make_layer):
