@@ -8,6 +8,16 @@ from stand_ins import scripted_agent
 
 pytestmark = pytest.mark.browser
 
+# The narrowest phone still in use, and a common one: a font wider than this machine's must fit too.
+PHONES = (320, 375)
+
+
+def assert_no_sideways_scroll(page) -> None:
+    for width in PHONES:
+        page.set_viewport_size({"width": width, "height": 812})
+        wide = page.evaluate("document.documentElement.scrollWidth > window.innerWidth")
+        assert not wide, f"the page scrolls sideways on a phone {width} wide"
+
 
 def test_the_page_shows_the_notes_and_receipts(make_layer):
     layer = make_layer(agent=scripted_agent)
@@ -41,9 +51,7 @@ def test_the_page_shows_the_notes_and_receipts(make_layer):
                 assert part in shown
         assert page.locator("button, form, input").count() == 0
 
-        page.set_viewport_size({"width": 375, "height": 812})
-        wide = page.evaluate("document.documentElement.scrollWidth > window.innerWidth")
-        assert not wide, "the page scrolls sideways on a phone"
+        assert_no_sideways_scroll(page)
         browser.close()
 
 
@@ -77,7 +85,5 @@ def test_the_button_runs_the_cycle_and_the_page_walks_its_six_steps(make_layer, 
         expect(page.locator("#register-proposals tr")).to_have_count(3)
         expect(page.locator("form")).to_have_count(0)
 
-        page.set_viewport_size({"width": 375, "height": 812})
-        wide = page.evaluate("document.documentElement.scrollWidth > window.innerWidth")
-        assert not wide, "the page scrolls sideways on a phone"
+        assert_no_sideways_scroll(page)
         browser.close()
